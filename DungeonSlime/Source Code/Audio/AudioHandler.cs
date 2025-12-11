@@ -1,6 +1,6 @@
 using System;
 
-namespace DungeonSlime.Audio;
+namespace WaterEmblem.Audio;
 
 public class AudioHandler
 {

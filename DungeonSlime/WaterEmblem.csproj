@@ -26,4 +26,12 @@
     <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.*" />
     <PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.*" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Source Code\Combat\" />
+    <Folder Include="Source Code\Items\" />
+    <Folder Include="Source Code\Menus\" />
+    <Folder Include="Source Code\Scene\" />
+    <Folder Include="Source Code\Skills\" />
+    <Folder Include="Source Code\UI\" />
+  </ItemGroup>
 </Project>

@@ -1,6 +1,6 @@
 using System;
 
-namespace DungeonSlime.Graphics;
+namespace WaterEmblem.Graphics;
 
 public class Renderer
 {

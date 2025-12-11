@@ -2,12 +2,12 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace DungeonSlime;
+namespace WaterEmblem;
 
 public class Game1 
 : Core
 {
-    public Game1() : base("Dungeon Slime", 1280, 720, false)
+    public Game1() : base("Water Emblem", 1280, 720, false)
     {
         
     }

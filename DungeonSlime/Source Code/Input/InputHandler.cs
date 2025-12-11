@@ -1,6 +1,6 @@
 using System;
 
-namespace DungeonSlime.Input;
+namespace WaterEmblem.Input;
 
 public class InputHandler
 {

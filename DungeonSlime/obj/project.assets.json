@@ -300,9 +300,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Home\\Documents\\Monogame_Project\\DungeonSlime\\DungeonSlime.csproj",
-      "projectName": "DungeonSlime",
-      "projectPath": "C:\\Users\\Home\\Documents\\Monogame_Project\\DungeonSlime\\DungeonSlime.csproj",
+      "projectUniqueName": "C:\\Users\\Home\\Documents\\Monogame_Project\\DungeonSlime\\WaterEmblem.csproj",
+      "projectName": "WaterEmblem",
+      "projectPath": "C:\\Users\\Home\\Documents\\Monogame_Project\\DungeonSlime\\WaterEmblem.csproj",
       "packagesPath": "C:\\Users\\Home\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Home\\Documents\\Monogame_Project\\DungeonSlime\\obj\\",
       "projectStyle": "PackageReference",
