@@ -5,10 +5,10 @@
     "version": "0.2.0",
     "configurations": [
       {
-        "name": "C#: DungeonSlime Debug",
+        "name": "C#: WaterEmblem Debug",
         "type": "dotnet",
         "request": "launch",
-        "projectPath": "${workspaceFolder}/DungeonSlime.csproj"
+        "projectPath": "${workspaceFolder}/WaterEmblem.csproj"
       }
     ],
   }

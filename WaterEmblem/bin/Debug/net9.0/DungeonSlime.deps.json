@@ -6,12 +6,12 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v9.0": {
-      "DungeonSlime/1.0.0": {
+      "WaterEmblem/1.0.0": {
         "dependencies": {
           "MonoGame.Framework.DesktopGL": "3.8.4.1"
         },
         "runtime": {
-          "DungeonSlime.dll": {}
+          "WaterEmblem.dll": {}
         }
       },
       "MonoGame.Framework.DesktopGL/3.8.4.1": {
@@ -116,7 +116,7 @@
     }
   },
   "libraries": {
-    "DungeonSlime/1.0.0": {
+    "WaterEmblem/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

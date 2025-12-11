@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Home\\Documents\\Monogame_Project\\DungeonSlime\\WaterEmblem.csproj": {}
+    "c:\\Users\\Home\\Documents\\Monogame_Project\\WaterEmblem\\WaterEmblem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Home\\Documents\\Monogame_Project\\DungeonSlime\\WaterEmblem.csproj": {
+    "c:\\Users\\Home\\Documents\\Monogame_Project\\WaterEmblem\\WaterEmblem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Home\\Documents\\Monogame_Project\\DungeonSlime\\WaterEmblem.csproj",
+        "projectUniqueName": "c:\\Users\\Home\\Documents\\Monogame_Project\\WaterEmblem\\WaterEmblem.csproj",
         "projectName": "WaterEmblem",
-        "projectPath": "C:\\Users\\Home\\Documents\\Monogame_Project\\DungeonSlime\\WaterEmblem.csproj",
+        "projectPath": "c:\\Users\\Home\\Documents\\Monogame_Project\\WaterEmblem\\WaterEmblem.csproj",
         "packagesPath": "C:\\Users\\Home\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Home\\Documents\\Monogame_Project\\DungeonSlime\\obj\\",
+        "outputPath": "c:\\Users\\Home\\Documents\\Monogame_Project\\WaterEmblem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Home\\AppData\\Roaming\\NuGet\\NuGet.Config"
