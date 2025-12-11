@@ -1,0 +1,3 @@
+"dotnet new mgdesktopgl -o MyGame" needed to make new projects
+
+don't put hyphens in your project name
