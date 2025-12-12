@@ -1,16 +1,26 @@
 using System;
 using System.Data;
+using System.Runtime.CompilerServices;
 using Tecstile.Graphics;
 using Tecstile.Input;
 using Tecstile.Source_Code.Menus;
 using Tecstile.Source_Code.Scene;
+using Tecstile.Source_Code.Settings;
 
 namespace Tecstile;
 
 public static class Global
 {
-    public static MenuManager menu = new MenuManager();
-    public static SceneManager scene = new SceneManager();
-    public static InputHandler input = new InputHandler();
-    public static Renderer renderer = new Renderer();
+    public static SettingsManager settings;
+    public static MenuManager menu;
+    public static SceneManager scene;
+    public static InputHandler input;
+
+    static Global()
+    {
+        settings = new SettingsManager();
+        menu = new MenuManager();
+        scene = new SceneManager();
+        input = new InputHandler();
+    }
 }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Tecstile.Graphics;
 
 namespace Tecstile;
 
@@ -29,19 +30,18 @@ public class Game1
     protected override void Update(GameTime gameTime)
     {
         //if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-        if (Global.menu.exit_calling)
-            Exit();
+        //if (Global.menu.exit_calling)
+        //    Exit();
 
-        // TODO: Add your update logic here
+        Global.input.update(gameTime);
+        Global.scene.update();
 
         base.Update(gameTime);
     }
 
     protected override void Draw(GameTime gameTime)
     {
-        GraphicsDevice.Clear(Color.CornflowerBlue);
-
-        // TODO: Add your drawing code here
+        Renderer.draw(GraphicsDevice);
 
         base.Draw(gameTime);
     }

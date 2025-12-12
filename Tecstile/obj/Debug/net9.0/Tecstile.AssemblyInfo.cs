@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Tecstile")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f8f6f16247c597723115a032411f187a7e1d08d9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3149d961d746cbec894ee6b281ff055cf01f284c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Tecstile")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Tecstile")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

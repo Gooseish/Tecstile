@@ -1,8 +1,13 @@
 using System;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework;
 
 namespace Tecstile.Graphics;
 
-public class Renderer
+public static class Renderer
 {
-
+    public static void draw(GraphicsDevice graphicsDevice)
+    {
+        graphicsDevice.Clear(Color.CornflowerBlue);
+    }
 }
