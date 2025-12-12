@@ -15,15 +15,16 @@ public class InputHandler
     private KeyboardState CurrentKeyboardState;
     public InputHandler()
     {
+        state = new InputState();
+        
         PreviousKeyboardState = new KeyboardState();
         CurrentKeyboardState = Keyboard.GetState();
-
     }
     public void update(GameTime gameTime)
     {
         PreviousKeyboardState = CurrentKeyboardState;
         CurrentKeyboardState = Keyboard.GetState();
-        foreach(Keys key in Global.settings.state.KeyboardMap.Values)
+        foreach(var (commandName, key) in Global.settings.state.KeyboardMap)
         {
             
         }

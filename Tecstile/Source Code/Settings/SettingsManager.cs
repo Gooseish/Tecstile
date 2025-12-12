@@ -21,17 +21,17 @@ public class SettingsManager
         {
             state.KeyboardMap.Clear();
 
-            state.KeyboardMap[Keys.Z] = Input.CommandName.confirm;
-            state.KeyboardMap[Keys.X] = Input.CommandName.cancel;
-            state.KeyboardMap[Keys.Up] = Input.CommandName.up;
-            state.KeyboardMap[Keys.Down] = Input.CommandName.down;
-            state.KeyboardMap[Keys.Left] = Input.CommandName.left;
-            state.KeyboardMap[Keys.Right] = Input.CommandName.right;
-            state.KeyboardMap[Keys.Enter] = Input.CommandName.start;
-            state.KeyboardMap[Keys.Back] = Input.CommandName.select;
-            state.KeyboardMap[Keys.A] = Input.CommandName.tab;
-            state.KeyboardMap[Keys.C] = Input.CommandName.info;
-            state.KeyboardMap[Keys.Escape] = Input.CommandName.escape;
+            state.KeyboardMap[Input.CommandName.confirm] = Keys.Z;
+            state.KeyboardMap[Input.CommandName.cancel] = Keys.X;
+            state.KeyboardMap[Input.CommandName.up] = Keys.Up;
+            state.KeyboardMap[Input.CommandName.down] = Keys.Down;
+            state.KeyboardMap[Input.CommandName.left] = Keys.Left;
+            state.KeyboardMap[Input.CommandName.right] = Keys.Right;
+            state.KeyboardMap[Input.CommandName.start] = Keys.Enter;
+            state.KeyboardMap[Input.CommandName.select] = Keys.Back;
+            state.KeyboardMap[Input.CommandName.tab] = Keys.A;
+            state.KeyboardMap[Input.CommandName.info] = Keys.C;
+            state.KeyboardMap[Input.CommandName.escape] = Keys.Escape;
         }
         Keybinds();
     }

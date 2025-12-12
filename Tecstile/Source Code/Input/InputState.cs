@@ -10,5 +10,7 @@ public struct InputState
     public InputState()
     {
         commands = new Dictionary<CommandName, Command>{};
+        foreach(CommandName commandName in Enum.GetValues(typeof(CommandName)))
+            commands[commandName] = new Command();
     }
 }
