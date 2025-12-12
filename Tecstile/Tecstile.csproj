@@ -30,6 +30,7 @@
     <Folder Include="Source Code\Character Sheets\" />
     <Folder Include="Source Code\Character Sheets\Items\" />
     <Folder Include="Source Code\Character Sheets\Skills\" />
+    <Folder Include="Source Code\Clock\" />
     <Folder Include="Source Code\Combat\" />
     <Folder Include="Source Code\Cutscenes\" />
     <Folder Include="Source Code\Events\" />

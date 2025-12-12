@@ -6,10 +6,10 @@ namespace Tecstile.Source_Code.Scene;
 
 public class SceneManager
 {
-    private SceneState state;
+    private SceneState State;
     public SceneManager()
     {
-        state = new SceneState();
+        State = new SceneState();
     }
     public void update(GameTime gameTime)
     {

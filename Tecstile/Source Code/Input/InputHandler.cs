@@ -9,13 +9,13 @@ namespace Tecstile.Input;
 
 public class InputHandler
 {
-    public InputState state;
+    private InputState State;
     
     //private KeyboardState PreviousKeyboardState;
     private KeyboardState CurrentKeyboardState;
     public InputHandler()
     {
-        state = new InputState();
+        State = new InputState();
 
         //PreviousKeyboardState = new KeyboardState();
         CurrentKeyboardState = Keyboard.GetState();
@@ -23,21 +23,26 @@ public class InputHandler
     public void update(GameTime gameTime)
     {
         //PreviousKeyboardState = CurrentKeyboardState;
-        CurrentKeyboardState = Keyboard.GetState();
-        foreach(var (commandName, key) in Global.settings.state.KeyboardMap)
+        void updateCommands()
         {
-            Command command = state.commands[commandName];
+            CurrentKeyboardState = Keyboard.GetState();
+            foreach(var (commandName, key) in Global.settings.keyboardMap)
+            {
+                Command command = State.commands[commandName];
 
-            command.KeyDown = CurrentKeyboardState.IsKeyDown(key);
-            command.KeyPressed = (command.KeyDown && command.TimeSpanHeld == 0);
-            command.KeyReleased = (!command.KeyDown && command.TimeSpanHeld > 0);
+                command.KeyDown = CurrentKeyboardState.IsKeyDown(key);
+                command.KeyPressed = (command.KeyDown && command.TimeSpanHeld == 0);
+                command.KeyReleased = (!command.KeyDown && command.TimeSpanHeld > 0);
 
-            if (command.KeyDown)
-                command.TimeSpanHeld += 1;
-            else
-                command.TimeSpanHeld = 0;
+                if (command.KeyDown)
+                    command.TimeSpanHeld += 1;
+                else
+                    command.TimeSpanHeld = 0;
 
-            state.commands[commandName] = command;
+                State.commands[commandName] = command;
+            }
         }
+        updateCommands();
+
     }
 }

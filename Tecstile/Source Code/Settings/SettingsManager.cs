@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Microsoft.Xna.Framework.Input;
 using Tecstile.Input;
 
@@ -6,11 +7,12 @@ namespace Tecstile.Source_Code.Settings;
 
 public class SettingsManager
 {
-    public SettingsState state;
+    private SettingsState State;
 
+    public Dictionary<Input.CommandName, Keys> keyboardMap {get {return State.KeyboardMap;}}
     public SettingsManager()
     {
-        state = new SettingsState();
+        State = new SettingsState();
         RestoreDefaultSettings();
         RestoreSavedSettings();
     }
@@ -19,19 +21,19 @@ public class SettingsManager
     {
         void Keybinds()
         {
-            state.KeyboardMap.Clear();
+            State.KeyboardMap.Clear();
 
-            state.KeyboardMap[Input.CommandName.confirm] = Keys.Z;
-            state.KeyboardMap[Input.CommandName.cancel] = Keys.X;
-            state.KeyboardMap[Input.CommandName.up] = Keys.Up;
-            state.KeyboardMap[Input.CommandName.down] = Keys.Down;
-            state.KeyboardMap[Input.CommandName.left] = Keys.Left;
-            state.KeyboardMap[Input.CommandName.right] = Keys.Right;
-            state.KeyboardMap[Input.CommandName.start] = Keys.Enter;
-            state.KeyboardMap[Input.CommandName.select] = Keys.Back;
-            state.KeyboardMap[Input.CommandName.tab] = Keys.A;
-            state.KeyboardMap[Input.CommandName.info] = Keys.C;
-            state.KeyboardMap[Input.CommandName.escape] = Keys.Escape;
+            State.KeyboardMap[Input.CommandName.confirm] = Keys.Z;
+            State.KeyboardMap[Input.CommandName.cancel] = Keys.X;
+            State.KeyboardMap[Input.CommandName.up] = Keys.Up;
+            State.KeyboardMap[Input.CommandName.down] = Keys.Down;
+            State.KeyboardMap[Input.CommandName.left] = Keys.Left;
+            State.KeyboardMap[Input.CommandName.right] = Keys.Right;
+            State.KeyboardMap[Input.CommandName.start] = Keys.Enter;
+            State.KeyboardMap[Input.CommandName.select] = Keys.Back;
+            State.KeyboardMap[Input.CommandName.tab] = Keys.A;
+            State.KeyboardMap[Input.CommandName.info] = Keys.C;
+            State.KeyboardMap[Input.CommandName.escape] = Keys.Escape;
         }
         Keybinds();
     }
