@@ -27,12 +27,13 @@
     <PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.*" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Source Code\Character Sheets\" />
+    <Folder Include="Source Code\Character Sheets\Items\" />
+    <Folder Include="Source Code\Character Sheets\Skills\" />
     <Folder Include="Source Code\Combat\" />
     <Folder Include="Source Code\Events\" />
     <Folder Include="Source Code\Items\" />
-    <Folder Include="Source Code\Pathfinding\" />
     <Folder Include="Source Code\RNG\" />
-    <Folder Include="Source Code\State\" />
     <Folder Include="Source Code\Skills\" />
     <Folder Include="Source Code\UI\" />
   </ItemGroup>
