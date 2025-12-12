@@ -23,9 +23,9 @@ public class InputHandler
     {
         PreviousKeyboardState = CurrentKeyboardState;
         CurrentKeyboardState = Keyboard.GetState();
-        //foreach(CommandName command in Global.settings.state.KeyboardMap.Keys)
-        //{
-        //    
-        //}
+        foreach(Keys key in Global.settings.state.KeyboardMap.Values)
+        {
+            
+        }
     }
 }

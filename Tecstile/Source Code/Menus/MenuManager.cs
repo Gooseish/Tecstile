@@ -4,11 +4,11 @@ namespace Tecstile.Source_Code.Menus;
 
 public class MenuManager
 {
-    private MenuState State;
+    public MenuState state;
+    public MenuManager()
+    {
+        state = new MenuState();
+    }
     private bool Exit_Calling = false;
     public bool exit_calling { get { return Exit_Calling; } }
-    public void update()
-    {
-        
-    }
 }
