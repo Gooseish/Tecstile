@@ -11,22 +11,33 @@ public class InputHandler
 {
     public InputState state;
     
-    private KeyboardState PreviousKeyboardState;
+    //private KeyboardState PreviousKeyboardState;
     private KeyboardState CurrentKeyboardState;
     public InputHandler()
     {
         state = new InputState();
-        
-        PreviousKeyboardState = new KeyboardState();
+
+        //PreviousKeyboardState = new KeyboardState();
         CurrentKeyboardState = Keyboard.GetState();
     }
     public void update(GameTime gameTime)
     {
-        PreviousKeyboardState = CurrentKeyboardState;
+        //PreviousKeyboardState = CurrentKeyboardState;
         CurrentKeyboardState = Keyboard.GetState();
         foreach(var (commandName, key) in Global.settings.state.KeyboardMap)
         {
-            
+            Command command = state.commands[commandName];
+
+            command.KeyDown = CurrentKeyboardState.IsKeyDown(key);
+            command.KeyPressed = (command.KeyDown && command.TimeSpanHeld == 0);
+            command.KeyReleased = (!command.KeyDown && command.TimeSpanHeld > 0);
+
+            if (command.KeyDown)
+                command.TimeSpanHeld += 1;
+            else
+                command.TimeSpanHeld = 0;
+
+            state.commands[commandName] = command;
         }
     }
 }
