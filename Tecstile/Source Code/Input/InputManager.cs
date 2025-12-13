@@ -60,8 +60,8 @@ public class InputManager
                 command.Result = CommandResult.Null;
 
                 command.keyDown = CurrentKeyboardState.IsKeyDown(key);
-                command.keyPressed = (command.keyDown && command.timeSpanHeld == 0);
-                command.keyReleased = (!command.keyDown && command.timeSpanHeld > 0);
+                command.keyPressed = command.keyDown && command.timeSpanHeld == 0;
+                command.keyReleased = !command.keyDown && command.timeSpanHeld > 0;
 
                 if (command.keyDown)
                     command.timeSpanHeld += 1;

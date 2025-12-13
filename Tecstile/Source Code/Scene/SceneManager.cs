@@ -73,21 +73,17 @@ public class SceneManager
 
         void HandleInputBySceneType()
         {
-            switch (State.activeScene.sceneType)
-            {
-                case SceneType.Title:
-                    HandleInputTitle((SceneTitleState)State.activeScene);
-                    break;
-                default:
-                    throw new Exception("Scene type not recognized.");
-            }   
+            if (State.activeScene is SceneTitleState activeScene)
+                HandleInputTitle(activeScene);
+            else
+                throw new Exception("Scene type not recognized.");
         }
         HandleInputBySceneType();
 
         void HandleInputByComponents()
         {
-            if (State.activeScene is IMenuControlScheme)
-                HandleInputMenuControlScheme((IMenuControlScheme)State.activeScene);
+            if (State.activeScene is IMenuControlScheme activeScene)
+                HandleInputMenuControlScheme(activeScene);
         }
         HandleInputByComponents();
     }
