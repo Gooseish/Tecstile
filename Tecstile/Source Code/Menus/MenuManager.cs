@@ -107,7 +107,37 @@ public class MenuManager
     // Directional Input
     private CommandResult TryDirectionalInput(CommandName command)
     {
+        if (State.activeMenu is IMenuNodeMap activeMenu)
+            switch (activeMenu.nodeMapType)
+            {
+                case NodeMapType.Linear:
+                    switch (command)
+                    {
+                        case CommandName.Up:
+                        case CommandName.Left:
+                            DecrementActiveNodeIndex(activeMenu);
+                            return CommandResult.Accepted;
+                        case CommandName.Down:
+                        case CommandName.Right:
+                            IncrementActiveNodeIndex(activeMenu);
+                            return CommandResult.Accepted;
+                    }
+                    break;
+                default:
+                    break;
+            }
         return CommandResult.Null;
+    }
+    private void IncrementActiveNodeIndex(IMenuNodeMap activeMenu)
+    {
+        activeMenu.activeNodeIndex = (activeMenu.activeNodeIndex + 1) % activeMenu.nodes.Count;
+    }
+    private void DecrementActiveNodeIndex(IMenuNodeMap activeMenu)
+    {
+        activeMenu.activeNodeIndex -= 1;
+        // Loop back around
+        if (activeMenu.activeNodeIndex < 0)
+            activeMenu.activeNodeIndex += activeMenu.nodes.Count;
     }
     #endregion
     #region Constructor

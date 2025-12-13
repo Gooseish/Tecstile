@@ -11,4 +11,9 @@ public interface IMenuNodeMap
     public bool inspectActive{get;set;}
     public List<NodeBase> nodes {get;}
     public int activeNodeIndex {get;set;}
+    public NodeMapType nodeMapType{get;set;}
+}
+public enum NodeMapType
+{
+    Linear,
 }
