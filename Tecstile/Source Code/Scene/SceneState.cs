@@ -5,7 +5,7 @@ namespace Tecstile.Source_Code.Scene;
 public struct SceneState
 {
     public int inputSleepTimer;
-    public ValueType activeScene;
+    public object activeScene;
 
     public SceneState()
     {

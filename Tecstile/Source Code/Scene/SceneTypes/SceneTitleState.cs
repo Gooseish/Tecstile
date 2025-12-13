@@ -3,7 +3,7 @@ using Tecstile.Source_Code.Scene;
 
 namespace Tecstile.Source_Code.Scene;
 
-public struct SceneTitleState: 
+public class SceneTitleState: 
 IMenuControlScheme
 {
     #region Interface Complaince

@@ -40,7 +40,7 @@ public class SceneManager
         updateByComponents();
     }
     #region Update by Scene Type
-    private void UpdateTitle(ref SceneTitleState activeScene)
+    private void UpdateTitle(SceneTitleState activeScene)
     {
         if (activeScene.menuControlActive)
             return;
