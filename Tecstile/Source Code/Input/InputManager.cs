@@ -57,6 +57,7 @@ public class InputManager
             foreach(var (commandName, key) in Global.settings.keyboardMap)
             {
                 Command command = State.commands[commandName];
+                command.Result = CommandResult.Null;
 
                 command.keyDown = CurrentKeyboardState.IsKeyDown(key);
                 command.keyPressed = (command.keyDown && command.timeSpanHeld == 0);

@@ -19,6 +19,9 @@ public class MenuManager
         CommandResult result = CommandResult.Null;
         switch(command)
         {
+            case CommandName.Cancel:
+                result = TryCancel();
+                break;
             default:
                 break;
         }
@@ -29,16 +32,22 @@ public class MenuManager
     {
         State.menuOpen = true;
     }
-    public void callMenuClose()
-    {
-        State.menuOpen = false;
-    }
-    #endregion
-    #region Private Controls
-    
     public void callExit()
     {
         State.exitCalling = true;
+    }
+    #endregion
+    #region Private Controls
+    private CommandResult TryCancel()
+    {
+        CommandResult result = CommandResult.Null;
+        CallMenuClose();
+        result = CommandResult.Accepted;
+        return result;
+    }
+    private void CallMenuClose()
+    {
+        State.menuOpen = false;
     }
     #endregion
     #region Constructor

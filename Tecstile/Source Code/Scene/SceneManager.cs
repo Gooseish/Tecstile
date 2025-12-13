@@ -31,9 +31,9 @@ public class SceneManager
     #region Public Controls
     #endregion
     #region Private Controls
-    public void PipeCommands(Dictionary<CommandName, Action> pipeline)
+    private void PipeCommands(Dictionary<CommandName, Action> commandPipeline)
     {
-        foreach (Input.CommandName command in Enum.GetValues(typeof(Input.CommandName)))
+        foreach (CommandName command in commandPipeline.Keys)
         {
             // Don't use consumed commands
             if (Global.input.commandConsumed(command))
@@ -42,8 +42,21 @@ public class SceneManager
             if (!Global.input.keyPressed(command))
                 continue;
 
-            if (pipeline.ContainsKey(command))
-                pipeline[command]();
+            commandPipeline[command]();
+        }
+    }
+    private void PipeAllCommands(Action<CommandName> action)
+    {
+        foreach (CommandName command in Enum.GetValues(typeof(CommandName)))
+        {
+            // Don't use consumed commands
+            if (Global.input.commandConsumed(command))
+                continue;
+            // Check if the command is calling
+            if (!Global.input.keyPressed(command))
+                continue;
+
+            action(command);
         }
     }
     #endregion
@@ -55,6 +68,9 @@ public class SceneManager
     #region Handle Input
     private void HandleInput()
     {
+        if (inputSleeping)
+            return;
+
         void HandleInputBySceneType()
         {
             switch (State.activeScene.sceneType)
@@ -82,40 +98,24 @@ public class SceneManager
         if (activeScene.menuControlActive)
             return;
 
-        // Is there a way to abstract this code block into a method that depends only on a dictionary of lambda expressions?
-        // Maybe call it "pipe inputs?"
-        // Iterate over all commands
-        foreach (Input.CommandName command in Enum.GetValues(typeof(Input.CommandName)))
+        Dictionary<CommandName, Action> commandPipeline = new()
         {
-            // Don't use consumed commands
-            if (Global.input.commandConsumed(command))
-                continue;
-            // Check if the command is calling
-            if (!Global.input.keyPressed(command))
-                continue;
-
-            switch(command)
-            {
-                case Input.CommandName.Start:
-                    Global.menu.callMenuOpen();
-                    break;
-                case Input.CommandName.Escape:
-                    Global.menu.callExit();
-                    break;
-                default:
-                    break;
-            }
-        }
+            {CommandName.Start, Global.menu.callMenuOpen},
+            {CommandName.Escape, Global.menu.callExit},
+        };
+        PipeCommands(commandPipeline);
     }
     #endregion
     #region Handle Input by Components
     private void HandleInputMenuControlScheme(IMenuControlScheme activeScene)
     {
         activeScene.menuControlActive = Global.menu.menuOpen;
-        if (inputSleeping || !activeScene.menuControlActive)
+
+        if (!activeScene.menuControlActive)
             return;
-        if (Global.input.keyPressed(Input.CommandName.Cancel))
-            Global.menu.callMenuClose();
+
+        PipeAllCommands(Global.menu.tryCommand);
+
         // Todo
     }
     #endregion
