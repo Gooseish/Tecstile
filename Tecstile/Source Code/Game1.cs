@@ -30,7 +30,7 @@ public class Game1
     protected override void Update(GameTime gameTime)
     {
         //if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-        if (Global.menu.exitCalling)
+        if (Global.scene.exitCalling)
             Exit();
 
         Global.clock.update(gameTime);

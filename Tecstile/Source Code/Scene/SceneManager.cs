@@ -16,6 +16,7 @@ public class SceneManager
     }
     #region Accessors
     public bool inputSleeping {get{return State.inputSleepTimer > 0;}}
+    public bool exitCalling {get{return State.exitCalling;}}
     public SceneType sceneType {get{return State.activeScene.sceneType;}}
     #endregion
     #region Private Controls
@@ -30,6 +31,10 @@ public class SceneManager
     }
     #endregion
     #region Public Controls
+    public void callExit()
+    {
+        State.exitCalling = true;
+    }
     #endregion
     #region Private Controls
     private void PipeCommands(Dictionary<CommandName, Action> commandPipeline)
@@ -140,7 +145,7 @@ public class SceneManager
         Dictionary<CommandName, Action> commandPipeline = new()
         {
             {CommandName.Start, Global.menu.callMenuOpen},
-            {CommandName.Escape, Global.menu.callExit},
+            {CommandName.Escape, callExit},
         };
         PipeCommands(commandPipeline);
     }

@@ -5,7 +5,6 @@ namespace Tecstile.Source_Code.Menus;
 
 public class MenuState
 {
-    public bool exitCalling;
     public List<MenuBase> menus;
     public MenuBase activeMenu
     {

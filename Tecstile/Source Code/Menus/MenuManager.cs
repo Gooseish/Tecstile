@@ -13,7 +13,6 @@ public class MenuManager
     private MenuState State;
     #endregion
     #region Accessors
-    public bool exitCalling { get { return State.exitCalling; } }
     public bool menuOpen {get{return State.menus.Count > 0;}}
     #endregion
     #region Public Controls 
@@ -56,10 +55,6 @@ public class MenuManager
             default:
                 break;
         }
-    }
-    public void callExit()
-    {
-        State.exitCalling = true;
     }
     #endregion
     #region Private Controls

@@ -8,6 +8,7 @@ public struct SceneState
     public int inputSleepTimer;
     public int fadeTime;
     public int fadeTimer;
+    public bool exitCalling;
 
     public SceneState()
     {
