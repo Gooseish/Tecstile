@@ -16,7 +16,7 @@ public static class Global
     public static SettingsManager settings;
     public static MenuManager menu;
     public static SceneManager scene;
-    public static InputHandler input;
+    public static InputManager input;
 
     static Global()
     {
@@ -24,6 +24,6 @@ public static class Global
         settings = new SettingsManager();
         menu = new MenuManager();
         scene = new SceneManager();
-        input = new InputHandler();
+        input = new InputManager();
     }
 }

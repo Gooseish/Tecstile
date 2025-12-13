@@ -46,14 +46,20 @@ public class SceneManager
             return;
 
         if (Global.input.command(Input.CommandName.start).KeyPressed)
-            activeScene.menuControlActive = true;
+            Global.menu.callMenuOpen();
+        
+        if (Global.input.command(Input.CommandName.escape).KeyPressed)
+            Global.menu.callExit();
     }
     #endregion
     #region Update by Components
     private void UpdateMenuControlScheme(IMenuControlScheme activeScene)
     {
+        activeScene.menuControlActive = Global.menu.menuOpen;
         if (inputSleeping || !activeScene.menuControlActive)
             return;
+        if (Global.input.command(Input.CommandName.cancel).KeyPressed)
+            Global.menu.callMenuClose();
         // Todo
     }
     #endregion

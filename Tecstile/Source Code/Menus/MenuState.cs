@@ -2,7 +2,7 @@ using System;
 
 namespace Tecstile.Source_Code.Menus;
 
-public struct MenuState
+public class MenuState
 {
-    
+    public bool menuOpen;
 }

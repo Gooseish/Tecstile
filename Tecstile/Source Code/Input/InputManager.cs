@@ -7,7 +7,7 @@ using Tecstile.Source_Code.Input;
 
 namespace Tecstile.Input;
 
-public class InputHandler
+public class InputManager
 {
     private InputState State;
     
@@ -20,7 +20,7 @@ public class InputHandler
 
     //private KeyboardState PreviousKeyboardState;
     private KeyboardState CurrentKeyboardState;
-    public InputHandler()
+    public InputManager()
     {
         State = new InputState();
 
