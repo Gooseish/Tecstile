@@ -1,13 +1,18 @@
 using System;
+using Microsoft.Xna.Framework;
 
 
 namespace Tecstile.Source_Code.Clock;
 
 public class ClockManager
 {
-    public ClockState state;
+    private ClockState State;
     public ClockManager()
     {
-        state = new ClockState();
+        State = new ClockState();
+    }
+    public void update(GameTime gameTime)
+    {
+        
     }
 }

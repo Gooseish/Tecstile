@@ -11,6 +11,13 @@ public class InputHandler
 {
     private InputState State;
     
+    #region Accessors
+    public Command command(CommandName commandName)
+    {
+        return State.commands[commandName];
+    }
+    #endregion
+
     //private KeyboardState PreviousKeyboardState;
     private KeyboardState CurrentKeyboardState;
     public InputHandler()
@@ -20,7 +27,7 @@ public class InputHandler
         //PreviousKeyboardState = new KeyboardState();
         CurrentKeyboardState = Keyboard.GetState();
     }
-    public void update(GameTime gameTime)
+    public void update()
     {
         //PreviousKeyboardState = CurrentKeyboardState;
         void updateCommands()
@@ -43,6 +50,5 @@ public class InputHandler
             }
         }
         updateCommands();
-
     }
 }

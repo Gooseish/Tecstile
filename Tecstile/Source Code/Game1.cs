@@ -33,8 +33,9 @@ public class Game1
         if (Global.menu.exit_calling)
             Exit();
 
-        Global.input.update(gameTime);
-        Global.scene.update(gameTime);
+        Global.clock.update(gameTime);
+        Global.input.update();
+        Global.scene.update();
 
         base.Update(gameTime);
     }
