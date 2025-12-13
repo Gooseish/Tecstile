@@ -56,6 +56,8 @@ public class MenuManager
                 break;
         }
     }
+    #endregion
+    #region Private Controls
     private void AddMenu(MenuType type)
     {
         switch (type)
@@ -67,8 +69,10 @@ public class MenuManager
                 break;
         }
     }
-    #endregion
-    #region Private Controls
+    private void CloseAllMenus()
+    {
+        State.menus.Clear();
+    }
     // Cancel
     private CommandResult TryCancel()
     {
