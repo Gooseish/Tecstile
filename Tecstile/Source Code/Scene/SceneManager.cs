@@ -63,8 +63,50 @@ public class SceneManager
     #region Update Loop
     public void update()
     {
+        UpdateState();
         HandleInput();
     }
+    #region Update State
+    private void UpdateState()
+    {
+        void UpdateState_Universal()
+        {
+            if (State.inputSleepTimer > 0)
+            {
+                State.inputSleepTimer -= 1;
+            }
+        }
+        UpdateState_Universal();
+
+        void UpdateState_BySceneType()
+        {
+            if (State.activeScene is SceneTitleState activeScene)
+                UpdateState_Title(activeScene);
+            else
+                throw new Exception("Scene type not recognized.");
+        }
+        UpdateState_BySceneType();
+
+        void UpdateState_ByComponents()
+        {
+            if (State.activeScene is IMenuControlScheme activeScene)
+                UpdateState_MenuControlScheme(activeScene);
+        }
+        UpdateState_ByComponents();
+    }
+    #region Update State by Scene Type
+    private void UpdateState_Title(SceneTitleState activeScene)
+    {
+        
+    }
+    #endregion
+    #region Update State by Scene Type
+    private void UpdateState_MenuControlScheme(IMenuControlScheme activeScene)
+    {
+        activeScene.menuControlActive = Global.menu.menuOpen;
+    }
+    #endregion
+    #endregion
     #region Handle Input
     private void HandleInput()
     {
@@ -74,7 +116,7 @@ public class SceneManager
         void HandleInputBySceneType()
         {
             if (State.activeScene is SceneTitleState activeScene)
-                HandleInputTitle(activeScene);
+                HandleInput_Title(activeScene);
             else
                 throw new Exception("Scene type not recognized.");
         }
@@ -83,12 +125,12 @@ public class SceneManager
         void HandleInputByComponents()
         {
             if (State.activeScene is IMenuControlScheme activeScene)
-                HandleInputMenuControlScheme(activeScene);
+                HandleInput_MenuControlScheme(activeScene);
         }
         HandleInputByComponents();
     }
     #region Handle Input by Scene Type
-    private void HandleInputTitle(SceneTitleState activeScene)
+    private void HandleInput_Title(SceneTitleState activeScene)
     {
         // If menuing, no nothing
         if (activeScene.menuControlActive)
@@ -103,16 +145,12 @@ public class SceneManager
     }
     #endregion
     #region Handle Input by Components
-    private void HandleInputMenuControlScheme(IMenuControlScheme activeScene)
+    private void HandleInput_MenuControlScheme(IMenuControlScheme activeScene)
     {
-        activeScene.menuControlActive = Global.menu.menuOpen;
-
         if (!activeScene.menuControlActive)
             return;
 
         PipeAllCommands(Global.menu.tryCommand);
-
-        // Todo
     }
     #endregion
     #endregion
