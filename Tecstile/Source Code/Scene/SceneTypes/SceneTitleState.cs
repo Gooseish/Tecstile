@@ -11,7 +11,7 @@ IMenuControlScheme
     {
         sceneType = SceneType.Title;
     }
-    #region Interface Complaince
+    #region Interface Compliance
     public bool menuControlActive {get;set;}
     public bool inspectActive{get;set;}
     #endregion

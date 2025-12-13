@@ -1,5 +1,7 @@
 using System;
 using System.Collections;
+using System.ComponentModel.Design;
+using System.Runtime.InteropServices;
 using Tecstile.Source_Code.Input;
 using Tecstile.Source_Code.Scene;
 
@@ -80,11 +82,26 @@ public class MenuManager
     // Confirm
     private CommandResult CallCurrentNode()
     {
+        if (State.activeMenu is IMenuNodeMap activeMenu)
+            if (activeMenu.activeNode is INodeCallback activeNode)
+                if (activeNode.callbackCondition)
+                {
+                    activeNode.callback();
+                    return CommandResult.Accepted;
+                }
+                else
+                    return CommandResult.Rejected;
         return CommandResult.Null;
     }
     // Info
     private CommandResult TryInspect()
     {
+        if (State.activeMenu is IMenuNodeMap activeMenu)
+            if (activeMenu.inspectable)
+            {
+                activeMenu.inspectActive = !activeMenu.inspectActive;
+                return CommandResult.Accepted;
+            }
         return CommandResult.Null;
     }
     // Tab
