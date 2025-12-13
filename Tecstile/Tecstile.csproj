@@ -34,6 +34,7 @@
     <Folder Include="Source Code\Combat\" />
     <Folder Include="Source Code\Cutscenes\" />
     <Folder Include="Source Code\Events\" />
+    <Folder Include="Source Code\Menus\MenuComponents\" />
     <Folder Include="Source Code\RNG\" />
     <Folder Include="Source Code\Settings\" />
     <Folder Include="Source Code\Skills\" />

@@ -1,12 +1,13 @@
 using System;
-using Tecstile.Source_Code.Scene.SceneTypes;
 
 namespace Tecstile.Source_Code.Scene;
 
 public struct SceneState
 {
-    public int inputSleepTimer;
     public SceneBase activeScene;
+    public int inputSleepTimer;
+    public int fadeTime;
+    public int fadeTimer;
 
     public SceneState()
     {

@@ -1,8 +1,8 @@
 using System;
 
-namespace Tecstile.Source_Code.Scene.SceneTypes;
+namespace Tecstile.Source_Code.Scene;
 
-public class SceneBase
+public abstract class SceneBase
 {
     public SceneType sceneType;
 }

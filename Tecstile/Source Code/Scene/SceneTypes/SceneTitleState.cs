@@ -1,6 +1,5 @@
 using System;
 using Tecstile.Source_Code.Scene;
-using Tecstile.Source_Code.Scene.SceneTypes;
 
 namespace Tecstile.Source_Code.Scene;
 
