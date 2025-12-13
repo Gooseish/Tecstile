@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using Tecstile.Source_Code.Input;
+using Tecstile.Source_Code.Scene;
 
 namespace Tecstile.Source_Code.Menus;
 
@@ -11,7 +12,7 @@ public class MenuManager
     #endregion
     #region Accessors
     public bool exitCalling { get { return State.exitCalling; } }
-    public bool menuOpen {get{return State.menuOpen;}}
+    public bool menuOpen {get{return State.menus.Count > 0;}}
     #endregion
     #region Public Controls 
     public void tryCommand(CommandName command)
@@ -22,6 +23,21 @@ public class MenuManager
             case CommandName.Cancel:
                 result = TryCancel();
                 break;
+            case CommandName.Confirm:
+                result = CallCurrentNode();
+                break;
+            case CommandName.Info:
+                result = TryInspect();
+                break;
+            case CommandName.Tab:
+                result = TryTab();
+                break;
+            case CommandName.Up:
+            case CommandName.Down:
+            case CommandName.Left:
+            case CommandName.Right:
+                result = TryDirectionalInput(command);
+                break;
             default:
                 break;
         }
@@ -30,7 +46,14 @@ public class MenuManager
     }
     public void callMenuOpen()
     {
-        State.menuOpen = true;
+        switch (Global.scene.sceneType)
+        {
+            case SceneType.Title:
+                State.menus.Add(new MenuTitle());
+                break;
+            default:
+                break;
+        }
     }
     public void callExit()
     {
@@ -38,16 +61,41 @@ public class MenuManager
     }
     #endregion
     #region Private Controls
+    // Cancel
     private CommandResult TryCancel()
     {
         CommandResult result = CommandResult.Null;
-        CallMenuClose();
-        result = CommandResult.Accepted;
+        try
+        {
+            CallMenuClose();
+            result = CommandResult.Accepted;
+        }
+        finally { }
         return result;
     }
     private void CallMenuClose()
     {
-        State.menuOpen = false;
+        State.menus.RemoveAt(State.menus.Count);
+    }
+    // Confirm
+    private CommandResult CallCurrentNode()
+    {
+        return CommandResult.Null;
+    }
+    // Info
+    private CommandResult TryInspect()
+    {
+        return CommandResult.Null;
+    }
+    // Tab
+    private CommandResult TryTab()
+    {
+        return CommandResult.Null;
+    }
+    // Directional Input
+    private CommandResult TryDirectionalInput(CommandName command)
+    {
+        return CommandResult.Null;
     }
     #endregion
     #region Constructor

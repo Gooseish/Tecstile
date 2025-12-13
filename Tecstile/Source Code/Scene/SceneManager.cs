@@ -15,7 +15,8 @@ public class SceneManager
         State = new SceneState();
     }
     #region Accessors
-    public bool inputSleeping{get{return State.inputSleepTimer > 0;}}
+    public bool inputSleeping {get{return State.inputSleepTimer > 0;}}
+    public SceneType sceneType {get{return State.activeScene.sceneType;}}
     #endregion
     #region Private Controls
     private void InputSleep(int time)
