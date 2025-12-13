@@ -4,7 +4,10 @@ using Tecstile.Source_Code.Scene;
 namespace Tecstile.Source_Code.Scene;
 
 public struct SceneTitleState: 
-MenuControlScheme
+IMenuControlScheme
 {
-    public bool menucontrol_active {get;set;}
+    #region Interface Complaince
+    public bool menuControlActive {get;set;}
+    public bool inspectActive{get;set;}
+    #endregion
 }

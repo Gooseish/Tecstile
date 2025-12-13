@@ -4,16 +4,14 @@ namespace Tecstile.Source_Code.Scene;
 
 public struct SceneState
 {
-    public SceneTitleState sceneTitleState;
-    public SceneType activeScene;
+    public int inputSleepTimer;
+    public ValueType activeScene;
 
     public SceneState()
     {
-        sceneTitleState = new SceneTitleState();
-        activeScene = SceneType.Title;
+        inputSleepTimer = 0;
+
+        activeScene = new SceneTitleState();
     }
 }
-public enum SceneType
-{
-    Title
-}
+
