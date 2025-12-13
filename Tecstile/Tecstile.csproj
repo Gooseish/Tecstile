@@ -35,8 +35,6 @@
     <Folder Include="Source Code\Cutscenes\" />
     <Folder Include="Source Code\Events\" />
     <Folder Include="Source Code\Menus\MenuComponents\" />
-    <Folder Include="Source Code\Menus\NodeComponents\" />
-    <Folder Include="Source Code\Menus\NodeTypes\" />
     <Folder Include="Source Code\Menus\PanelComponents\" />
     <Folder Include="Source Code\Menus\PanelTypes\" />
     <Folder Include="Source Code\RNG\" />

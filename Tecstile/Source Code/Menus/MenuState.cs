@@ -8,7 +8,7 @@ public class MenuState
     public List<MenuBase> menus;
     public MenuBase activeMenu
     {
-        get {return menus[menus.Count];}
+        get {return menus[menus.Count - 1];}
     }
     public MenuState()
     {

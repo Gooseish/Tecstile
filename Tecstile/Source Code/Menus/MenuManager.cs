@@ -56,6 +56,17 @@ public class MenuManager
                 break;
         }
     }
+    private void AddMenu(MenuType type)
+    {
+        switch (type)
+        {
+            case MenuType.NewGame:
+            State.menus.Add(new MenuNewGame());
+                break;
+            default:
+                break;
+        }
+    }
     #endregion
     #region Private Controls
     // Cancel
@@ -72,20 +83,27 @@ public class MenuManager
     }
     private void CallMenuClose()
     {
-        State.menus.RemoveAt(State.menus.Count);
+        State.menus.RemoveAt(State.menus.Count - 1);
     }
     // Confirm
     private CommandResult CallCurrentNode()
     {
-        if (State.activeMenu is IMenuNodeMap activeMenu)
-            if (activeMenu.activeNode is INodeCallback activeNode)
-                if (activeNode.callbackCondition)
+        if (State.activeMenu is IMenuNodeMap activeMenu) // Menu has nodes
+        {
+            if (activeMenu.activeNode is INodeAddMenu activeNode) // Node adds menu
+                if (activeNode.openMenuCondition)
                 {
-                    activeNode.callback();
+                    AddMenu(activeNode.menuToOpen);
                     return CommandResult.Accepted;
                 }
                 else
                     return CommandResult.Rejected;
+            else if (activeMenu.activeNode is INodeExitGame)
+            {
+                Global.scene.callExit();
+                return CommandResult.Accepted;
+            }
+        }
         return CommandResult.Null;
     }
     // Info
