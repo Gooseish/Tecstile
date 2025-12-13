@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Runtime.InteropServices;
 using Tecstile.Source_Code.Input;
@@ -14,6 +15,17 @@ public class MenuManager
     #endregion
     #region Accessors
     public bool menuOpen {get{return State.menus.Count > 0;}}
+    // Drawing Data
+    public IReadOnlyList<NodeBase> nodes
+    {
+        get
+        {
+            if (State.activeMenu is IMenuNodeMap activeMenu)
+                return activeMenu.nodes;
+            return new List<NodeBase>{};
+        }
+        
+    }
     #endregion
     #region Public Controls 
     public void tryCommand(CommandName command)
