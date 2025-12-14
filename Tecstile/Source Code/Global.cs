@@ -3,10 +3,10 @@ using System.Data;
 using System.Runtime.CompilerServices;
 using Tecstile.Graphics;
 using Tecstile.Input;
-using Tecstile.Source_Code.Clock;
-using Tecstile.Source_Code.Menus;
-using Tecstile.Source_Code.Scene;
-using Tecstile.Source_Code.Settings;
+using Tecstile.Clock;
+using Tecstile.Menus;
+using Tecstile.Scene;
+using Tecstile.Settings;
 
 namespace Tecstile;
 

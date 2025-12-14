@@ -1,8 +1,8 @@
 using System;
 using Microsoft.Xna.Framework;
-using Tecstile.Source_Code.Menus.NodeComponents;
+using Tecstile.Menus.NodeComponents;
 
-namespace Tecstile.Source_Code.Menus;
+namespace Tecstile.Menus;
 
 /// <summary>
 /// Special node for the "quit game" node on the game's title menu

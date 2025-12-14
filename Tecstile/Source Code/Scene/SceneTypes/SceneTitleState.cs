@@ -1,7 +1,7 @@
 using System;
-using Tecstile.Source_Code.Scene;
+using Tecstile.Scene;
 
-namespace Tecstile.Source_Code.Scene;
+namespace Tecstile.Scene;
 
 public class SceneTitleState: 
 SceneBase,

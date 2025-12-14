@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Tecstile.Source_Code.Menus;
+namespace Tecstile.Menus;
 
 public interface IMenuNodeMap
 {

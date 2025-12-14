@@ -1,6 +1,6 @@
 using System;
 
-namespace Tecstile.Source_Code.Cutscenes;
+namespace Tecstile.Cutscenes;
 
 public class CutsceneManager
 {

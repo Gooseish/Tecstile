@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
-using Tecstile.Source_Code.Menus;
+using Tecstile.Menus;
 
-namespace Tecstile.Source_Code.Menus;
+namespace Tecstile.Menus;
 
 public class MenuTitle:
 MenuBase,

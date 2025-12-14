@@ -1,6 +1,6 @@
 using System;
 
-namespace Tecstile.Source_Code.Input;
+namespace Tecstile.Input;
 
 /// <summary>
 /// Class that represents the key state of a generic key (e.g.

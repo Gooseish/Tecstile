@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Runtime.InteropServices;
-using Tecstile.Source_Code.Input;
-using Tecstile.Source_Code.Scene;
+using Tecstile.Input;
+using Tecstile.Scene;
 
-namespace Tecstile.Source_Code.Menus;
+namespace Tecstile.Menus;
 
 public class MenuManager
 {

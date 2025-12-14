@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Threading;
 using Microsoft.Xna.Framework;
-using Tecstile.Source_Code.Input;
+using Tecstile.Input;
 
-namespace Tecstile.Source_Code.Scene;
+namespace Tecstile.Scene;
 
 public class SceneManager
 {

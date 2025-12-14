@@ -1,6 +1,6 @@
 using System;
 
-namespace Tecstile.Source_Code.Scene;
+namespace Tecstile.Scene;
 
 public interface IMenuControlScheme
 {

@@ -2,7 +2,7 @@ using System;
 using Microsoft.Xna.Framework;
 
 
-namespace Tecstile.Source_Code.Clock;
+namespace Tecstile.Clock;
 
 public class ClockManager
 {

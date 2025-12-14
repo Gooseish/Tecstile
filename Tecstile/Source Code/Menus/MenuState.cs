@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Tecstile.Source_Code.Menus;
+namespace Tecstile.Menus;
 
 public class MenuState
 {
