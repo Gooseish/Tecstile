@@ -3,11 +3,21 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Tecstile.Menus;
 using Tecstile.Menus.NodeComponents;
+using Tecstile.Scene;
 
 namespace Tecstile.Graphics;
 
 public static partial class Renderer
 {
+    private static void DrawMenus(SpriteBatch spriteBatch)
+    {
+        if (!(Global.scene.activeScene is IMenuControlScheme scene))
+            return;
+        if (!(scene.menuControlActive))
+            return;
+        
+        DrawNodes(spriteBatch);
+    }
     private static void DrawNodes(SpriteBatch spriteBatch)
     {
         spriteBatch.Begin();
