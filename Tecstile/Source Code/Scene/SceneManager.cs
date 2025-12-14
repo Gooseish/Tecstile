@@ -76,41 +76,47 @@ public class SceneManager
     #region Update State
     private void UpdateState()
     {
-        void UpdateState_Universal()
+        void Universal()
         {
             if (State.inputSleepTimer > 0)
             {
                 State.inputSleepTimer -= 1;
             }
         }
-        UpdateState_Universal();
+        Universal();
 
-        void UpdateState_BySceneType()
+        void BySceneType()
         {
-            if (State.activeScene is SceneTitle activeScene)
-                UpdateState_Title(activeScene);
-            else
-                throw new Exception("Scene type not recognized.");
+            if (UpdateState_Title())
+                return;
+            throw new Exception("Scene type not recognized.");
         }
-        UpdateState_BySceneType();
+        BySceneType();
 
-        void UpdateState_ByComponents()
+        void ByComponents()
         {
-            if (State.activeScene is IMenuControlScheme activeScene)
-                UpdateState_MenuControlScheme(activeScene);
+            UpdateState_MenuControlScheme();
         }
-        UpdateState_ByComponents();
+        ByComponents();
     }
     #region Update State by Scene Type
-    private void UpdateState_Title(SceneTitle activeScene)
+    private bool UpdateState_Title()
     {
-        
+        if (State.activeScene is SceneTitle activeScene)
+        {
+            // Update logic goes here
+            return true;
+        }
+        return false;
     }
     #endregion
     #region Update State by Scene Type
-    private void UpdateState_MenuControlScheme(IMenuControlScheme activeScene)
+    private void UpdateState_MenuControlScheme()
     {
-        activeScene.menuControlActive = Global.menu.menuOpen;
+        if (State.activeScene is IMenuControlScheme activeScene)
+        {
+            activeScene.menuControlActive = Global.menu.menuOpen;
+        }
     }
     #endregion
     #endregion
@@ -120,28 +126,28 @@ public class SceneManager
         if (inputSleeping)
             return;
 
-        void HandleInputBySceneType()
+        void BySceneType()
         {
-            if (State.activeScene is SceneTitle activeScene)
-                HandleInput_Title(activeScene);
-            else
-                throw new Exception("Scene type not recognized.");
+            if (HandleInput_Title())
+                return;
+            throw new Exception("Scene type not recognized.");
         }
-        HandleInputBySceneType();
+        BySceneType();
 
-        void HandleInputByComponents()
+        void ByComponents()
         {
-            if (State.activeScene is IMenuControlScheme activeScene)
-                HandleInput_MenuControlScheme(activeScene);
+            HandleInput_MenuControlScheme();
         }
-        HandleInputByComponents();
+        ByComponents();
     }
     #region Handle Input by Scene Type
-    private void HandleInput_Title(SceneTitle activeScene)
+    private bool HandleInput_Title()
     {
+        if (!(State.activeScene is SceneTitle activeScene))
+            return false;
         // If menuing, no nothing
         if (activeScene.menuControlActive)
-            return;
+            return true;
 
         Dictionary<CommandName, Action> commandPipeline = new()
         {
@@ -149,11 +155,14 @@ public class SceneManager
             {CommandName.Escape, callExit},
         };
         PipeCommands(commandPipeline);
+        return true;
     }
     #endregion
     #region Handle Input by Components
-    private void HandleInput_MenuControlScheme(IMenuControlScheme activeScene)
+    private void HandleInput_MenuControlScheme()
     {
+        if (!(State.activeScene is IMenuControlScheme activeScene))
+            return;
         if (!activeScene.menuControlActive)
             return;
 
