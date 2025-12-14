@@ -2,7 +2,7 @@ using System;
 
 namespace Tecstile.Scene;
 
-public struct SceneState
+public class SceneState
 {
     public SceneBase activeScene;
     public int inputSleepTimer;
@@ -14,7 +14,7 @@ public struct SceneState
     {
         inputSleepTimer = 0;
 
-        activeScene = new SceneTitleState();
+        activeScene = new SceneTitle();
     }
 }
 

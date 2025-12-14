@@ -12,12 +12,18 @@ public static partial class Renderer
         graphicsDevice.Clear(Color.CornflowerBlue);
         SpriteBatch spriteBatch = new SpriteBatch(graphicsDevice);
 
-        void drawMenus()
+        BySceneType();
+        void BySceneType()
         {
-            DrawNodes(spriteBatch);
+            if (DrawTitle(spriteBatch))
+                return;
+            throw new Exception("Renderer could not recognize scene type.");
         }
-        if (Global.scene.activeScene is IMenuControlScheme scene)
-            if (scene.menuControlActive)
-                drawMenus();
+
+        ByComponent();
+        void ByComponent()
+        {
+            DrawMenus(spriteBatch);
+        }
     }
 }

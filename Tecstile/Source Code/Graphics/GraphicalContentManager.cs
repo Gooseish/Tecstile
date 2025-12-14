@@ -14,12 +14,22 @@ public class GraphicalContentManager
     {
         get {return State.menuTextures;}
     }
+    public IReadOnlyDictionary<string, SpriteFont> fonts
+    {
+        get {return State.fonts;}
+    }
     #endregion
 
     #region Public Controls
     public void loadContent()
     {
         ClearContent();
+
+        void loadFonts()
+        {
+            State.fonts["Arial"] = Core.Content.Load<SpriteFont>("Fonts/Arial");
+        }
+        loadFonts();
     }
     public void initialize()
     {
@@ -31,6 +41,7 @@ public class GraphicalContentManager
     private void ClearContent()
     {
         State.menuTextures.Clear();
+        State.fonts.Clear();
     }
     private Texture2D TextureFromSize(int width, int height)
     {
