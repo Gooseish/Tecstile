@@ -1,11 +1,12 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Runtime.InteropServices;
-using Tecstile.Source_Code.Input;
-using Tecstile.Source_Code.Scene;
+using Tecstile.Input;
+using Tecstile.Scene;
 
-namespace Tecstile.Source_Code.Menus;
+namespace Tecstile.Menus;
 
 public class MenuManager
 {
@@ -13,7 +14,19 @@ public class MenuManager
     private MenuState State;
     #endregion
     #region Accessors
+    public NodeBase activeNode {get {return ((IMenuNodeMap)State.activeMenu).activeNode;}}
     public bool menuOpen {get{return State.menus.Count > 0;}}
+    // Drawing Data
+    public IReadOnlyList<NodeBase> nodes
+    {
+        get
+        {
+            if (State.activeMenu is IMenuNodeMap activeMenu)
+                return activeMenu.nodes;
+            return new List<NodeBase>{};
+        }
+        
+    }
     #endregion
     #region Public Controls 
     public void tryCommand(CommandName command)

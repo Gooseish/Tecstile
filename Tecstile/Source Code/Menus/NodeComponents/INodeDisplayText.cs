@@ -1,6 +1,6 @@
 using System;
 
-namespace Tecstile.Source_Code.Menus.NodeComponents;
+namespace Tecstile.Menus.NodeComponents;
 
 public interface INodeDisplayText
 {

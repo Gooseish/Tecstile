@@ -1,6 +1,6 @@
 using System;
 
-namespace Tecstile.Source_Code.Clock;
+namespace Tecstile.Clock;
 
 public class ClockState
 {

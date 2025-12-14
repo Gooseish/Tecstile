@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Threading;
 using Microsoft.Xna.Framework;
-using Tecstile.Source_Code.Input;
+using Tecstile.Input;
 
-namespace Tecstile.Source_Code.Scene;
+namespace Tecstile.Scene;
 
 public class SceneManager
 {
@@ -15,6 +15,7 @@ public class SceneManager
         State = new SceneState();
     }
     #region Accessors
+    public SceneBase activeScene {get{return State.activeScene;}}
     public bool inputSleeping {get{return State.inputSleepTimer > 0;}}
     public bool exitCalling {get{return State.exitCalling;}}
     public SceneType sceneType {get{return State.activeScene.sceneType;}}
@@ -69,8 +70,8 @@ public class SceneManager
     #region Update Loop
     public void update()
     {
-        UpdateState();
         HandleInput();
+        UpdateState();
     }
     #region Update State
     private void UpdateState()

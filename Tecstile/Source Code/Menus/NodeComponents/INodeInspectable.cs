@@ -1,6 +1,6 @@
 using System;
 
-namespace Tecstile.Source_Code.Menus;
+namespace Tecstile.Menus;
 
 public interface INodeInspectable
 {

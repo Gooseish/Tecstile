@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
-using Tecstile.Source_Code.Menus;
+using Tecstile.Menus;
 
-namespace Tecstile.Source_Code.Menus;
+namespace Tecstile.Menus;
 
 public class MenuTitle:
 MenuBase,
@@ -18,25 +18,25 @@ IMenuNodeMap
             nodes = new List<NodeBase>{};
             // New Game
             nodes.Add(new NodeTitle(
-                new Vector2(10, 10),
+                new Vector2(100, 100),
                 "New Game",
                 MenuType.NewGame
             ));
             // Load Game
             nodes.Add(new NodeTitle(
-                new Vector2(10, 20),
+                new Vector2(100, 200),
                 "Load Game",
                 MenuType.LoadGame
             ));
             // Settings
             nodes.Add(new NodeTitle(
-                new Vector2(10, 30),
+                new Vector2(100, 300),
                 "Settings",
                 MenuType.Settings
             ));
             // Exit
             nodes.Add(new NodeTitleExit(
-                new Vector2(10, 40),
+                new Vector2(100, 400),
                 "Quit"
             ));
         }

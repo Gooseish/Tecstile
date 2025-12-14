@@ -1,7 +1,7 @@
 using System;
 using Microsoft.Xna.Framework;
 
-namespace Tecstile.Source_Code.Menus;
+namespace Tecstile.Menus;
 
 public abstract class NodeBase
 {

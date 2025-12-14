@@ -1,8 +1,9 @@
 using System;
 using Microsoft.Xna.Framework;
-using Tecstile.Source_Code.Menus.NodeComponents;
+using Microsoft.Xna.Framework.Graphics;
+using Tecstile.Menus.NodeComponents;
 
-namespace Tecstile.Source_Code.Menus;
+namespace Tecstile.Menus;
 
 /// <summary>
 /// Special node for the "quit game" node on the game's title menu
@@ -10,13 +11,20 @@ namespace Tecstile.Source_Code.Menus;
 public class NodeTitleExit:
 NodeBase,
 INodeExitGame,
-INodeDisplayText
+INodeDisplayText,
+INodeDrawFromNothing
 {
     public NodeTitleExit(Vector2 Position, string DisplayText)
     {
+        position = Position;
         displayText = DisplayText;
+        width = 1000;
+        height = 50;
     }
     #region Interface Compliance
     public string displayText {get;set;}
+    public int width {get;set;}
+    public int height {get;set;}
+    public string texture{get {return "WhiteSquare";}}
     #endregion
 }

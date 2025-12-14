@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
-using Tecstile.Source_Code.Input;
+using Tecstile.Input;
 
 namespace Tecstile.Input;
 

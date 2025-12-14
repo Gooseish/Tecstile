@@ -1,6 +1,6 @@
 using System;
 
-namespace Tecstile.Source_Code.Pathfinding;
+namespace Tecstile.Pathfinding;
 
 public class PathfindingManager
 {

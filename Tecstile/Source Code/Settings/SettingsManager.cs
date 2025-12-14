@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.Xna.Framework.Input;
 using Tecstile.Input;
 
-namespace Tecstile.Source_Code.Settings;
+namespace Tecstile.Settings;
 
 public class SettingsManager
 {
