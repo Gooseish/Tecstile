@@ -7,9 +7,11 @@ namespace Tecstile.Graphics;
 public class GraphicalContentState
 {
     public Dictionary<string, Texture2D> menuTextures;
+    public Dictionary<string, SpriteFont> fonts;
 
     public GraphicalContentState()
     {
         menuTextures = new Dictionary<string, Texture2D>{};
+        fonts = new Dictionary<string, SpriteFont>{};
     }
 }

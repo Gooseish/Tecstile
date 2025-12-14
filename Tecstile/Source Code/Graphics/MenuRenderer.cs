@@ -2,6 +2,7 @@ using System;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Tecstile.Menus;
+using Tecstile.Menus.NodeComponents;
 
 namespace Tecstile.Graphics;
 
@@ -15,11 +16,17 @@ public static partial class Renderer
             Color color = Color.White;
             if (testNode == Global.menu.activeNode)
                 color = Color.Gray;
-            if (testNode is INodeDrawFromNothing node)
+            if (testNode is INodeDrawFromNothing nodeDFN)
                 spriteBatch.Draw(
-                    Global.graphicalContent.menuTextures[node.texture], 
-                    new Rectangle((int)testNode.position.X, (int)testNode.position.Y, node.width, node.height), 
+                    Global.graphicalContent.menuTextures[nodeDFN.texture], 
+                    new Rectangle((int)testNode.position.X, (int)testNode.position.Y, nodeDFN.width, nodeDFN.height), 
                     color);
+            if (testNode is INodeDisplayText nodeDT)
+                spriteBatch.DrawString(
+                    Global.graphicalContent.fonts["Arial"], 
+                    nodeDT.displayText, 
+                    testNode.position, 
+                    Color.Black);
         }
         spriteBatch.End();
     }
