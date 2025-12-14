@@ -13,7 +13,7 @@ public static partial class Renderer
         foreach (NodeBase testNode in Global.menu.nodes)
         {
             Color color = Color.White;
-            if (testNode == ((IMenuNodeMap)Global.menu.state.activeMenu).activeNode)
+            if (testNode == Global.menu.activeNode)
                 color = Color.Gray;
             if (testNode is INodeDrawFromNothing node)
                 spriteBatch.Draw(node.texture, testNode.position, color);

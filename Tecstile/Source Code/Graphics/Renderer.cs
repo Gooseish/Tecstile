@@ -16,7 +16,7 @@ public static partial class Renderer
         {
             DrawNodes(spriteBatch);
         }
-        if (Global.scene.state.activeScene is IMenuControlScheme scene)
+        if (Global.scene.activeScene is IMenuControlScheme scene)
             if (scene.menuControlActive)
                 drawMenus();
     }
