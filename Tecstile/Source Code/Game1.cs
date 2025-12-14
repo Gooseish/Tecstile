@@ -15,9 +15,9 @@ public class Game1
 
     protected override void Initialize()
     {
-        // TODO: Add your initialization logic here
-
         base.Initialize();
+
+        Global.graphicalContent.initialize();
     }
 
     protected override void LoadContent()
@@ -30,7 +30,6 @@ public class Game1
 
     protected override void Update(GameTime gameTime)
     {
-        //if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
         if (Global.scene.exitCalling)
             Exit();
 

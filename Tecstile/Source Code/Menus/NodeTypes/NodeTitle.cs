@@ -21,7 +21,6 @@ INodeDrawFromNothing
         displayText = DisplayText;
         width = 1000;
         height = 50;
-        texture = INodeDrawFromNothing.new_texture(width, height);
     }
     #region Interface Compliance
     public MenuType menuToOpen {get;set;}
@@ -29,6 +28,6 @@ INodeDrawFromNothing
     public string displayText {get;set;}
     public int width {get;set;}
     public int height {get;set;}
-    public Texture2D texture{get;set;}
+    public string texture{get {return "WhiteSquare";}}
     #endregion
 }

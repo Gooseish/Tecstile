@@ -16,7 +16,10 @@ public static partial class Renderer
             if (testNode == Global.menu.activeNode)
                 color = Color.Gray;
             if (testNode is INodeDrawFromNothing node)
-                spriteBatch.Draw(node.texture, testNode.position, color);
+                spriteBatch.Draw(
+                    Global.graphicalContent.menuTextures[node.texture], 
+                    new Rectangle((int)testNode.position.X, (int)testNode.position.Y, node.width, node.height), 
+                    color);
         }
         spriteBatch.End();
     }
