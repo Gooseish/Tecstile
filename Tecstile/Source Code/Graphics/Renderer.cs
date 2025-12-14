@@ -10,12 +10,13 @@ public static partial class Renderer
     public static void draw(GraphicsDevice graphicsDevice)
     {
         graphicsDevice.Clear(Color.CornflowerBlue);
+        SpriteBatch spriteBatch = new SpriteBatch(graphicsDevice);
 
         void drawMenus()
         {
-            DrawNodes(graphicsDevice);
+            DrawNodes(spriteBatch);
         }
-        if (Global.scene is IMenuControlScheme scene)
+        if (Global.scene.state.activeScene is IMenuControlScheme scene)
             if (scene.menuControlActive)
                 drawMenus();
     }

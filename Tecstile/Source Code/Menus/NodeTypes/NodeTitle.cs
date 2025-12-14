@@ -1,5 +1,6 @@
 using System;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using Tecstile.Menus.NodeComponents;
 
 namespace Tecstile.Menus;
@@ -18,8 +19,9 @@ INodeDrawFromNothing
         menuToOpen = MenuToOpen;
         position = Position;
         displayText = DisplayText;
-        width = 100;
-        height = 5;
+        width = 1000;
+        height = 50;
+        texture = INodeDrawFromNothing.new_texture(width, height);
     }
     #region Interface Compliance
     public MenuType menuToOpen {get;set;}
@@ -27,5 +29,6 @@ INodeDrawFromNothing
     public string displayText {get;set;}
     public int width {get;set;}
     public int height {get;set;}
+    public Texture2D texture{get;set;}
     #endregion
 }

@@ -14,6 +14,7 @@ public class MenuManager
     private MenuState State;
     #endregion
     #region Accessors
+    public MenuState state {get {return State;}}
     public bool menuOpen {get{return State.menus.Count > 0;}}
     // Drawing Data
     public IReadOnlyList<NodeBase> nodes

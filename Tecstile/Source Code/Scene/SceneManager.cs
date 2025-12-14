@@ -15,6 +15,7 @@ public class SceneManager
         State = new SceneState();
     }
     #region Accessors
+    public SceneState state {get{return State;}}
     public bool inputSleeping {get{return State.inputSleepTimer > 0;}}
     public bool exitCalling {get{return State.exitCalling;}}
     public SceneType sceneType {get{return State.activeScene.sceneType;}}
@@ -69,8 +70,8 @@ public class SceneManager
     #region Update Loop
     public void update()
     {
-        UpdateState();
         HandleInput();
+        UpdateState();
     }
     #region Update State
     private void UpdateState()
