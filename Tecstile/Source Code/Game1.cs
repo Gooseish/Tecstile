@@ -23,6 +23,7 @@ public class Game1
     protected override void LoadContent()
     {
         // TODO: use this.Content to load your game content here
+        Global.graphicalContent.loadContent();
 
         base.LoadContent();
     }

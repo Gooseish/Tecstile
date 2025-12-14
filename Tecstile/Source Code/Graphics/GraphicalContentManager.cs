@@ -10,6 +10,10 @@ public class GraphicalContentManager
     #endregion
 
     #region Public Controls
+    public void loadContent()
+    {
+        
+    }
     #endregion
 
     #region Private Controls

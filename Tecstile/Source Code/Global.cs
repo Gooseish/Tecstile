@@ -7,6 +7,8 @@ using Tecstile.Clock;
 using Tecstile.Menus;
 using Tecstile.Scene;
 using Tecstile.Settings;
+using Tecstile.Audio;
+using Tecstile.Data;
 
 namespace Tecstile;
 
@@ -17,6 +19,9 @@ public static class Global
     public static MenuManager menu;
     public static SceneManager scene;
     public static InputManager input;
+    public static AudioContentManager audioContent;
+    public static DataContentManager dataContent;
+    public static GraphicalContentManager graphicalContent;
 
     static Global()
     {
@@ -25,5 +30,8 @@ public static class Global
         menu = new MenuManager();
         scene = new SceneManager();
         input = new InputManager();
+        audioContent = new AudioContentManager();
+        dataContent = new DataContentManager();
+        graphicalContent = new GraphicalContentManager();
     }
 }
