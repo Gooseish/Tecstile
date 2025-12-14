@@ -12,20 +12,35 @@ public static partial class Renderer
         graphicsDevice.Clear(Color.CornflowerBlue);
         SpriteBatch spriteBatch = new SpriteBatch(graphicsDevice);
 
-        void drawMenus()
+        void BySceneType()
         {
-            DrawNodes(spriteBatch);
+            bool drawTitle()
+            {
+                if (Global.scene.activeScene is SceneTitle scene)
+                    if (!scene.menuControlActive)
+                    {
+                        DrawTitleText(spriteBatch);
+                        return true;
+                    }
+                    return false;
+            }
+            if (drawTitle())
+                return;
         }
-        if (Global.scene.activeScene is IMenuControlScheme sceneMCS)
-            if (sceneMCS.menuControlActive)
-                drawMenus();
-        
-        void drawTitle()
+        BySceneType();
+
+        void ByComponent()
         {
-            DrawTitleText(spriteBatch);
+            void drawMenus()
+            {
+                if (Global.scene.activeScene is IMenuControlScheme scene)
+                    if (scene.menuControlActive)
+                    {
+                        DrawNodes(spriteBatch);
+                    }
+            }
+            drawMenus();
         }
-        if (Global.scene.activeScene is SceneTitle sceneTitle)
-            if (!sceneTitle.menuControlActive)
-                drawTitle();
+        ByComponent();
     }
 }
