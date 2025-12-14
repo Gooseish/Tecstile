@@ -12,18 +12,18 @@ public static partial class Renderer
         graphicsDevice.Clear(Color.CornflowerBlue);
         SpriteBatch spriteBatch = new SpriteBatch(graphicsDevice);
 
+        BySceneType();
         void BySceneType()
         {
             if (DrawTitle(spriteBatch))
                 return;
             throw new Exception("Renderer could not recognize scene type.");
         }
-        BySceneType();
 
+        ByComponent();
         void ByComponent()
         {
             DrawMenus(spriteBatch);
         }
-        ByComponent();
     }
 }

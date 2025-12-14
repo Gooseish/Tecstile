@@ -72,24 +72,24 @@ public partial class SceneManager
         {
             if (inputSleeping)
                 return;
-
+            
+            BySceneType();
             void BySceneType()
             {
                 if (HandleInput_Title())
                     return;
                 throw new Exception("Scene type not recognize by scene manager.");
             }
-            BySceneType();
-
+            ByComponents();
             void ByComponents()
             {
                 HandleInput_MenuControlScheme();
             }
-            ByComponents();
         }
         HandleInput();
         void UpdateState()
         {
+            Universal();
             void Universal()
             {
                 if (State.inputSleepTimer > 0)
@@ -97,21 +97,18 @@ public partial class SceneManager
                     State.inputSleepTimer -= 1;
                 }
             }
-            Universal();
-
+            BySceneType();
             void BySceneType()
             {
                 if (UpdateState_Title())
                     return;
                 throw new Exception("Scene type not recognized.");
             }
-            BySceneType();
-
+            ByComponents();
             void ByComponents()
             {
                 UpdateState_MenuControlScheme();
             }
-            ByComponents();
         }
         UpdateState();
     }

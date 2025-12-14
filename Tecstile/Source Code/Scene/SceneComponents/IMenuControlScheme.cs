@@ -26,5 +26,4 @@ public partial class SceneManager
             activeScene.menuControlActive = Global.menu.menuOpen;
         }
     }
-    
 }
