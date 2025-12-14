@@ -3,11 +3,11 @@ using Tecstile.Scene;
 
 namespace Tecstile.Scene;
 
-public class SceneTitleState: 
+public class SceneTitle: 
 SceneBase,
 IMenuControlScheme
 {
-    public SceneTitleState()
+    public SceneTitle()
     {
         sceneType = SceneType.Title;
     }

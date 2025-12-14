@@ -87,7 +87,7 @@ public class SceneManager
 
         void UpdateState_BySceneType()
         {
-            if (State.activeScene is SceneTitleState activeScene)
+            if (State.activeScene is SceneTitle activeScene)
                 UpdateState_Title(activeScene);
             else
                 throw new Exception("Scene type not recognized.");
@@ -102,7 +102,7 @@ public class SceneManager
         UpdateState_ByComponents();
     }
     #region Update State by Scene Type
-    private void UpdateState_Title(SceneTitleState activeScene)
+    private void UpdateState_Title(SceneTitle activeScene)
     {
         
     }
@@ -122,7 +122,7 @@ public class SceneManager
 
         void HandleInputBySceneType()
         {
-            if (State.activeScene is SceneTitleState activeScene)
+            if (State.activeScene is SceneTitle activeScene)
                 HandleInput_Title(activeScene);
             else
                 throw new Exception("Scene type not recognized.");
@@ -137,7 +137,7 @@ public class SceneManager
         HandleInputByComponents();
     }
     #region Handle Input by Scene Type
-    private void HandleInput_Title(SceneTitleState activeScene)
+    private void HandleInput_Title(SceneTitle activeScene)
     {
         // If menuing, no nothing
         if (activeScene.menuControlActive)

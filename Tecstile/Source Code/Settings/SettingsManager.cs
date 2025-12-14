@@ -8,8 +8,7 @@ namespace Tecstile.Settings;
 public class SettingsManager
 {
     private SettingsState State;
-
-    public Dictionary<Input.CommandName, Keys> keyboardMap {get {return State.KeyboardMap;}}
+    public IReadOnlyDictionary<CommandName, Keys> keyboardMap {get {return State.keyboardMap;}}
     public SettingsManager()
     {
         State = new SettingsState();
@@ -21,21 +20,29 @@ public class SettingsManager
     {
         void Keybinds()
         {
-            State.KeyboardMap.Clear();
+            State.keyboardMap.Clear();
 
-            State.KeyboardMap[Input.CommandName.Confirm] = Keys.Z;
-            State.KeyboardMap[Input.CommandName.Cancel] = Keys.X;
-            State.KeyboardMap[Input.CommandName.Up] = Keys.Up;
-            State.KeyboardMap[Input.CommandName.Down] = Keys.Down;
-            State.KeyboardMap[Input.CommandName.Left] = Keys.Left;
-            State.KeyboardMap[Input.CommandName.Right] = Keys.Right;
-            State.KeyboardMap[Input.CommandName.Start] = Keys.Enter;
-            State.KeyboardMap[Input.CommandName.Select] = Keys.Back;
-            State.KeyboardMap[Input.CommandName.Tab] = Keys.A;
-            State.KeyboardMap[Input.CommandName.Info] = Keys.C;
-            State.KeyboardMap[Input.CommandName.Escape] = Keys.Escape;
+            State.keyboardMap[CommandName.Confirm] = Keys.Z;
+            State.keyboardMap[CommandName.Cancel] = Keys.X;
+            State.keyboardMap[CommandName.Up] = Keys.Up;
+            State.keyboardMap[CommandName.Down] = Keys.Down;
+            State.keyboardMap[CommandName.Left] = Keys.Left;
+            State.keyboardMap[CommandName.Right] = Keys.Right;
+            State.keyboardMap[CommandName.Start] = Keys.Enter;
+            State.keyboardMap[CommandName.Select] = Keys.Back;
+            State.keyboardMap[CommandName.Tab] = Keys.A;
+            State.keyboardMap[CommandName.Info] = Keys.C;
+            State.keyboardMap[CommandName.Escape] = Keys.Escape;
         }
         Keybinds();
+
+        void Volume()
+        {
+            State.masterVolume = 100;
+            State.musicVolume = 100;
+            State.sfxVolume = 100;
+        }
+        Volume();
     }
     public void RestoreSavedSettings()
     {

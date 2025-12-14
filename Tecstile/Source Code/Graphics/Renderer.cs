@@ -16,8 +16,16 @@ public static partial class Renderer
         {
             DrawNodes(spriteBatch);
         }
-        if (Global.scene.activeScene is IMenuControlScheme scene)
-            if (scene.menuControlActive)
+        if (Global.scene.activeScene is IMenuControlScheme sceneMCS)
+            if (sceneMCS.menuControlActive)
                 drawMenus();
+        
+        void drawTitle()
+        {
+            DrawTitleText(spriteBatch);
+        }
+        if (Global.scene.activeScene is SceneTitle sceneTitle)
+            if (!sceneTitle.menuControlActive)
+                drawTitle();
     }
 }

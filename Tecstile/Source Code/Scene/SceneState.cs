@@ -14,7 +14,7 @@ public struct SceneState
     {
         inputSleepTimer = 0;
 
-        activeScene = new SceneTitleState();
+        activeScene = new SceneTitle();
     }
 }
 

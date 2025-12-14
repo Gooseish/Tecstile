@@ -5,11 +5,14 @@ using Tecstile.Input;
 
 namespace Tecstile.Settings;
 
-public struct SettingsState
+public class SettingsState
 {
-    public Dictionary<CommandName, Keys> KeyboardMap;
+    public Dictionary<CommandName, Keys> keyboardMap;
+    public int masterVolume;
+    public int sfxVolume;
+    public int musicVolume;
     public SettingsState()
     {
-        KeyboardMap = new Dictionary<CommandName, Keys>{};
+        keyboardMap = new Dictionary<CommandName, Keys>{};
     }
 }
