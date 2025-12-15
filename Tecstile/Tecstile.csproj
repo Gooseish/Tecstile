@@ -32,6 +32,7 @@
     <Folder Include="Source Code\Character Sheets\Skills\" />
     <Folder Include="Source Code\Clock\" />
     <Folder Include="Source Code\Combat\" />
+    <Folder Include="Source Code\TecstileConfig\" />
     <Folder Include="Source Code\Cutscenes\" />
     <Folder Include="Source Code\Data\" />
     <Folder Include="Source Code\Events\" />
