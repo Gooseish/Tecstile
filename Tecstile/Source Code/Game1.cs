@@ -42,7 +42,7 @@ public class Game1
 
     protected override void Draw(GameTime gameTime)
     {
-        Renderer.draw(GraphicsDevice);
+        Renderer.draw();
 
         base.Draw(gameTime);
     }
