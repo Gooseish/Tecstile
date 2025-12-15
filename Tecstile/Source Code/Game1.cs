@@ -18,6 +18,7 @@ public class Game1
         base.Initialize();
 
         Global.graphicalContent.initialize();
+        Renderer.initializeRenderTargets();
     }
 
     protected override void LoadContent()

@@ -1,11 +1,7 @@
 using System;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
-using Tecstile.Scene;
-using System.Collections.Generic;
 using Tecstile.Config;
-using System.Data;
-using System.Linq;
 
 namespace Tecstile.Graphics;
 
@@ -47,7 +43,7 @@ public static partial class Renderer
         graphicsDevice.SetRenderTarget(CurrentStable);
         graphicsDevice.Clear(Color.Transparent);
     }
-    private static void ClearRenderTargets()
+    public static void initializeRenderTargets()
     {
         for (int n = 0; n < StableRenderTargets.Length; n++)
             StableRenderTargets[n] = new RenderTarget2D(
@@ -61,7 +57,6 @@ public static partial class Renderer
     #region Drawing
     public static void draw()
     {
-        ClearRenderTargets();
         graphicsDevice.SetRenderTarget(CurrentStable);
         graphicsDevice.Clear(Color.CornflowerBlue);
         
