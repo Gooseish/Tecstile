@@ -1,11 +1,7 @@
 using System;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
-using Tecstile.Scene;
-using System.Collections.Generic;
 using Tecstile.Config;
-using System.Data;
-using System.Linq;
 
 namespace Tecstile.Graphics;
 
