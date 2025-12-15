@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using Tecstile.Input;
 
@@ -11,6 +12,10 @@ public class SettingsState
     public int masterVolume;
     public int sfxVolume;
     public int musicVolume;
+    public int letterboxPictureLocationX;
+    public int letterboxPictureLocationY;
+    public int letterboxPictureHeight;
+    public int letterboxPictureWidth;
     public SettingsState()
     {
         keyboardMap = new Dictionary<CommandName, Keys>{};
