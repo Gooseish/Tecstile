@@ -8,6 +8,10 @@ namespace Tecstile.Graphics;
 public class GraphicalContentManager
 {
     private GraphicalContentState State;
+    public GraphicalContentManager()
+    {
+        State = new GraphicalContentState();
+    }
 
     #region Accessors
     public IReadOnlyDictionary<string, Texture2D> menuTextures
@@ -59,9 +63,4 @@ public class GraphicalContentManager
         return texture;
     }
     #endregion
-
-    public GraphicalContentManager()
-    {
-        State = new GraphicalContentState();
-    }
 }

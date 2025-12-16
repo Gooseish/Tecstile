@@ -32,7 +32,7 @@
     <Folder Include="Source Code\Character Sheets\Skills\" />
     <Folder Include="Source Code\Clock\" />
     <Folder Include="Source Code\Combat\" />
-    <Folder Include="Source Code\Game Board\MapEntities\" />
+    <Folder Include="Source Code\Game Board\BoardEntities\" />
     <Folder Include="Source Code\Game Board\Pathfinding\" />
     <Folder Include="Source Code\TecstileConfig\" />
     <Folder Include="Source Code\Cutscenes\" />

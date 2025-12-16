@@ -11,9 +11,9 @@ public class GameMap
     public int width;
     /// <summary>
     /// Terrain map of the tileset. Keys represent 
-    /// tile ids, values represent terrain types.
+    /// tile ids, values represent terrain type id.
     /// </summary>
-    public Dictionary<int, Terrain> terrainMap;
+    public Dictionary<int, int> terrainMap;
     /// <summary>
     /// The int for each element of tileData corresponds to a specific tile 
     /// on the tileset. The position of each element in the array corresponds
@@ -29,7 +29,7 @@ public class GameMap
     /// <param name="x"></param>
     /// <param name="y"></param>
     /// <returns></returns>
-    public Terrain terrainAtLocation(int x, int y)
+    public int terrainIdAtLocation(int x, int y)
     {
         return terrainMap[tileData[x, y]];
     }
