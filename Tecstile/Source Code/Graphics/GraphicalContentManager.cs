@@ -25,15 +25,19 @@ public class GraphicalContentManager
     {
         ClearContent();
 
+        loadFonts();
         void loadFonts()
         {
-            State.fonts["Arial"] = Core.Content.Load<SpriteFont>("Fonts/Arial");
+            State.fonts["Arial"] = Core.Content.Load<SpriteFont>(@"Fonts/Arial");
         }
-        loadFonts();
     }
     public void initialize()
     {
         State.menuTextures["WhiteSquare"] = TextureFromSize(1, 1);
+    }
+    public void loadTileset(string tilesetName)
+    {
+        State.tileset = Core.Content.Load<Texture2D>(@"Graphics/Tilesets/" + tilesetName);
     }
     #endregion
 

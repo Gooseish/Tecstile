@@ -11,7 +11,7 @@ public static partial class Renderer
 {
     private static void DrawMenus(SpriteBatch spriteBatch)
     {
-        if (!(Global.scene.activeScene is IMenuControlScheme scene))
+        if (Global.scene.activeScene is not ISceneMenuControls scene)
             return;
         if (!(scene.menuControlActive))
             return;

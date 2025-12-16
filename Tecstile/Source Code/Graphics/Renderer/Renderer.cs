@@ -7,6 +7,40 @@ namespace Tecstile.Graphics;
 
 public static partial class Renderer
 {
+    #region Drawing
+    public static void draw()
+    {
+        graphicsDevice.SetRenderTarget(CurrentStable);
+        graphicsDevice.Clear(Color.CornflowerBlue);
+        
+        SpriteBatch spriteBatch = new SpriteBatch(graphicsDevice);
+        DrawAtSourceResolution(spriteBatch);
+        DrawToTargetResolution(spriteBatch, CurrentStable);
+    }
+    private static void DrawAtSourceResolution(SpriteBatch spriteBatch)
+    {
+        BySceneType();
+        void BySceneType()
+        {
+            if (DrawTitle(spriteBatch))
+                return;
+            throw new Exception("Renderer could not recognize scene type.");
+        }
+
+        ByComponent();
+        void ByComponent()
+        {
+            DrawMenus(spriteBatch);
+        }
+    }
+    private static void DrawToTargetResolution(SpriteBatch spriteBatch, RenderTarget2D renderTarget)
+    {
+        graphicsDevice.SetRenderTarget(null);
+        spriteBatch.Begin();
+        spriteBatch.Draw(renderTarget, Global.settings.letterboxPicture, Color.White);
+        spriteBatch.End();
+    }
+    #endregion
     #region Render Targeting
     /// <summary>
     /// Stable render targets are used to store the cumulative image built
@@ -52,40 +86,6 @@ public static partial class Renderer
         for (int n = 0; n < VolatileRenderTargets.Length; n++)
             VolatileRenderTargets[n] = new RenderTarget2D(
                 graphicsDevice, TecstileConfig.sourceResolutionWidth, TecstileConfig.sourceResolutionHeight);
-    }
-    #endregion
-    #region Drawing
-    public static void draw()
-    {
-        graphicsDevice.SetRenderTarget(CurrentStable);
-        graphicsDevice.Clear(Color.CornflowerBlue);
-        
-        SpriteBatch spriteBatch = new SpriteBatch(graphicsDevice);
-        DrawAtSourceResolution(spriteBatch);
-        DrawToTargetResolution(spriteBatch, CurrentStable);
-    }
-    private static void DrawAtSourceResolution(SpriteBatch spriteBatch)
-    {
-        BySceneType();
-        void BySceneType()
-        {
-            if (DrawTitle(spriteBatch))
-                return;
-            throw new Exception("Renderer could not recognize scene type.");
-        }
-
-        ByComponent();
-        void ByComponent()
-        {
-            DrawMenus(spriteBatch);
-        }
-    }
-    private static void DrawToTargetResolution(SpriteBatch spriteBatch, RenderTarget2D renderTarget)
-    {
-        graphicsDevice.SetRenderTarget(null);
-        spriteBatch.Begin();
-        spriteBatch.Draw(renderTarget, Global.settings.letterboxPicture, Color.White);
-        spriteBatch.End();
     }
     #endregion
     #region Alias

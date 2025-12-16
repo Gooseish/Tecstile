@@ -8,5 +8,5 @@ public abstract class SceneBase
 }
 public enum SceneType
 {
-    Title
+    Title, Map, Cutscene
 }

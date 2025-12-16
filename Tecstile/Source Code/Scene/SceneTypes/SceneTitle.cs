@@ -6,7 +6,7 @@ namespace Tecstile.Scene;
 
 public class SceneTitle: 
 SceneBase,
-IMenuControlScheme
+ISceneMenuControls
 {
     public SceneTitle()
     {

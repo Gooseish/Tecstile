@@ -16,9 +16,9 @@ public partial class SceneManager
     }
     #region Accessors
     public SceneBase activeScene {get{return State.activeScene;}}
+    public SceneType sceneType {get{return State.activeScene.sceneType;}}
     public bool inputSleeping {get{return State.inputSleepTimer > 0;}}
     public bool exitCalling {get{return State.exitCalling;}}
-    public SceneType sceneType {get{return State.activeScene.sceneType;}}
     #endregion
     #region Public Controls
     public void callExit()
