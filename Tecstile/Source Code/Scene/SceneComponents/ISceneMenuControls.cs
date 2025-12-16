@@ -2,7 +2,7 @@ using System;
 
 namespace Tecstile.Scene;
 
-public interface IMenuControlScheme
+public interface ISceneMenuControls
 {
     public bool menuControlActive { get; set;} // Is the control scheme accepting input?
     public bool inspectActive{get;set;}
@@ -12,7 +12,7 @@ public partial class SceneManager
 {
     private void HandleInput_MenuControlScheme()
     {
-        if (!(State.activeScene is IMenuControlScheme activeScene))
+        if (!(State.activeScene is ISceneMenuControls activeScene))
             return;
         if (!activeScene.menuControlActive)
             return;
@@ -21,9 +21,9 @@ public partial class SceneManager
     }
     private void UpdateState_MenuControlScheme()
     {
-        if (State.activeScene is IMenuControlScheme activeScene)
-        {
-            activeScene.menuControlActive = Global.menu.menuOpen;
-        }
+        if (!(State.activeScene is ISceneMenuControls activeScene))
+            return;
+
+        activeScene.menuControlActive = Global.menu.menuOpen;
     }
 }

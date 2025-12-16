@@ -9,6 +9,8 @@ using Tecstile.Scene;
 using Tecstile.Settings;
 using Tecstile.Audio;
 using Tecstile.Data;
+using Tecstile.Game_Board;
+using Tecstile.Events;
 
 namespace Tecstile;
 
@@ -22,6 +24,8 @@ public static class Global
     public static AudioContentManager audioContent;
     public static DataContentManager dataContent;
     public static GraphicalContentManager graphicalContent;
+    public static GameBoardManager gameBoard;
+    public static EventManager events;
 
     static Global()
     {
@@ -33,5 +37,7 @@ public static class Global
         audioContent = new AudioContentManager();
         dataContent = new DataContentManager();
         graphicalContent = new GraphicalContentManager();
+        gameBoard = new GameBoardManager();
+        events = new EventManager();
     }
 }

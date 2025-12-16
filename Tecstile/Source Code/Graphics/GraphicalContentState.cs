@@ -8,6 +8,7 @@ public class GraphicalContentState
 {
     public Dictionary<string, Texture2D> menuTextures;
     public Dictionary<string, SpriteFont> fonts;
+    public SpriteSheet tileset;
 
     public GraphicalContentState()
     {

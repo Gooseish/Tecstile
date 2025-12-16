@@ -2,12 +2,17 @@ using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Tecstile.Config;
 
 namespace Tecstile.Graphics;
 
 public class GraphicalContentManager
 {
     private GraphicalContentState State;
+    public GraphicalContentManager()
+    {
+        State = new GraphicalContentState();
+    }
 
     #region Accessors
     public IReadOnlyDictionary<string, Texture2D> menuTextures
@@ -25,15 +30,21 @@ public class GraphicalContentManager
     {
         ClearContent();
 
+        loadFonts();
         void loadFonts()
         {
-            State.fonts["Arial"] = Core.Content.Load<SpriteFont>("Fonts/Arial");
+            State.fonts["Arial"] = Core.Content.Load<SpriteFont>(@"Fonts/Arial");
         }
-        loadFonts();
     }
     public void initialize()
     {
         State.menuTextures["WhiteSquare"] = TextureFromSize(1, 1);
+    }
+    public void loadTileset(string tilesetName)
+    {
+        State.tileset = new SpriteSheet(
+            Core.Content.Load<Texture2D>(@"Graphics/Tilesets/" + tilesetName), 
+            TecstileConfig.tileWidth, TecstileConfig.tileHeight);
     }
     #endregion
 
@@ -55,9 +66,4 @@ public class GraphicalContentManager
         return texture;
     }
     #endregion
-
-    public GraphicalContentManager()
-    {
-        State = new GraphicalContentState();
-    }
 }

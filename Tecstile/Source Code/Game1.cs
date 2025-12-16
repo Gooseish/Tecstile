@@ -25,6 +25,8 @@ public class Game1
     {
         // TODO: use this.Content to load your game content here
         Global.graphicalContent.loadContent();
+        Global.dataContent.loadContent();
+        Global.audioContent.loadContent();
 
         base.LoadContent();
     }
