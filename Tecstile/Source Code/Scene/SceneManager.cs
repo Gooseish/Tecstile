@@ -27,6 +27,15 @@ public partial class SceneManager
     }
     #endregion
     #region Private Controls
+    private void InputSleep(int time)
+    {
+        State.inputSleepTimer = time;
+    }
+    private void FadeToBlack(int time)
+    {
+        State.fadeTime = time;
+        State.fadeTimer = time;
+    }
     private void PipeCommands(Dictionary<CommandName, Action> commandPipeline)
     {
         foreach (CommandName command in commandPipeline.Keys)
@@ -40,15 +49,6 @@ public partial class SceneManager
 
             commandPipeline[command]();
         }
-    }
-    private void InputSleep(int time)
-    {
-        State.inputSleepTimer = time;
-    }
-    private void FadeToBlack(int time)
-    {
-        State.fadeTime = time;
-        State.fadeTimer = time;
     }
     private void PipeAllCommands(Action<CommandName> action)
     {

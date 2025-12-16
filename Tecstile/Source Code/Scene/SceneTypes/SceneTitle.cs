@@ -31,7 +31,7 @@ public partial class SceneManager
         Dictionary<CommandName, Action> commandPipeline = new()
         {
             {CommandName.Start, Global.menu.callMenuOpen},
-            {CommandName.Escape, callExit},
+            //{CommandName.Escape, callExit},
         };
         PipeCommands(commandPipeline);
         return true;

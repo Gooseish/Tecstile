@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Tecstile.Config;
 
 namespace Tecstile.Graphics;
 
@@ -41,7 +42,9 @@ public class GraphicalContentManager
     }
     public void loadTileset(string tilesetName)
     {
-        State.tileset = Core.Content.Load<Texture2D>(@"Graphics/Tilesets/" + tilesetName);
+        State.tileset = new SpriteSheet(
+            Core.Content.Load<Texture2D>(@"Graphics/Tilesets/" + tilesetName), 
+            TecstileConfig.tileWidth, TecstileConfig.tileHeight);
     }
     #endregion
 
