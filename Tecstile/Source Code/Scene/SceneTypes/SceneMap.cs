@@ -4,7 +4,7 @@ namespace Tecstile.Scene;
 
 public class SceneMap:
 SceneBase,
-ISceneMapControls,
+ISceneBoardControls,
 ISceneMenuControls,
 ISceneTilemap,
 ISceneCutsceneControls,
