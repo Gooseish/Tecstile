@@ -1,21 +1,45 @@
-<Window xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:vm="using:TecstileEditor.ViewModels"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        x:Class="TecstileEditor.Views.MainWindow"
-        x:DataType="vm:MainWindowViewModel"
-        Icon="/Assets/avalonia-logo.ico"
-        Title="TecstileEditor">
+<Window
+    x:Class="TecstileEditor.Views.MainWindow"
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:TecstileEditor.ViewModels"
+    Title="TecstileEditor"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    x:DataType="vm:MainWindowViewModel"
+    Icon="/Assets/avalonia-logo.ico"
+    mc:Ignorable="d">
 
     <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:MainWindowViewModel/>
+        <!--
+            This only sets the DataContext for the previewer in an IDE,
+            to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs)
+        -->
+        <vm:MainWindowViewModel />
     </Design.DataContext>
 
+    
     <StackPanel>
+        <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_File">
+                    <MenuItem Header="_Open..." />
+                    <Separator />
+                    <MenuItem Header="_Exit" />
+                </MenuItem>
+                <MenuItem Header="_Edit">
+                    <MenuItem Header="Copy" />
+                    <MenuItem Header="Paste" />
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        <TabStrip Margin="5">
+            <TabStripItem>Tab 1</TabStripItem>
+            <TabStripItem>Tab 2</TabStripItem>
+            <TabStripItem>Tab 3</TabStripItem>
+        </TabStrip>
         <Border Margin="5" CornerRadius="10" Background="LightBlue">
             <TextBlock Margin="5"
                     FontSize="24" 
@@ -27,16 +51,15 @@
             ColumnDefinitions="120, 100"
             RowDefinitions="Auto, Auto">
             <TextBlock Grid.Row="0" Grid.Column="0" Margin="10">Celsius</TextBlock>
-            <TextBox Grid.Row="0" Grid.Column="1" Margin="0 5" Text="0" Name="{Binding Celsius}"/>
+            <TextBox Grid.Row="0" Grid.Column="1" Margin="0 5" Text="0"/>
             <TextBlock Grid.Row="1" Grid.Column="0" Margin="10">Fahrenheit</TextBlock>
-            <TextBox Grid.Row="1" Grid.Column="1" Margin="0 5" Text="0" Name="{Binding Fahrenheit}"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Margin="0 5" Text="0"/>
         </Grid>
 
         <Button 
-            HorizontalAlignment="Center" 
-            Command="{Binding CalculateCommand}">
+            HorizontalAlignment="Center" >
             Calculate
-            </Button>
+        </Button>
     </StackPanel>
 
 </Window>

@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TecstileEditor", "TecstileEditor\TecstileEditor.csproj", "{47C1C800-08C3-1D81-AD79-CBD78A18A501}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{47C1C800-08C3-1D81-AD79-CBD78A18A501}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47C1C800-08C3-1D81-AD79-CBD78A18A501}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47C1C800-08C3-1D81-AD79-CBD78A18A501}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47C1C800-08C3-1D81-AD79-CBD78A18A501}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4A2BB4DD-DD5D-41BB-B1C1-02AE4CDD44D1}
+	EndGlobalSection
+EndGlobal
