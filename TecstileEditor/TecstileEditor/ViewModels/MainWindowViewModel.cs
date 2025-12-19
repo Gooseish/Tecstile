@@ -13,7 +13,16 @@ public partial class MainWindowViewModel : ViewModelBase
     {
         _currentWindow = _unitsWindow;
     }
-
     private readonly TerrainWindowViewModel _terrainWindow = new();
     private readonly UnitsWindowViewModel _unitsWindow = new();
+    [RelayCommand]
+    private void GoToUnits()
+    {
+        CurrentWindow = _unitsWindow;
+    }
+    [RelayCommand]
+    private void GoToTerrain()
+    {
+        CurrentWindow = _terrainWindow;
+    }
 }
