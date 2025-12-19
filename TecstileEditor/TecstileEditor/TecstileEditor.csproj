@@ -31,4 +31,22 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Tecstile\Tecstile.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\ClassesWindowView.axaml.cs">
+      <DependentUpon>ClassesWindowView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ItemsWindowView.axaml.cs">
+      <DependentUpon>ItemsWindowView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\SkillsWindowView.axaml.cs">
+      <DependentUpon>SkillsWindowView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\TerrainWindowView.axaml.cs">
+      <DependentUpon>TerrainWindowView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\UnitsWindowView.axaml.cs">
+      <DependentUpon>UnitsWindowView.axaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>

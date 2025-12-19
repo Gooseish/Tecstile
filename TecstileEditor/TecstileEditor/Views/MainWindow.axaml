@@ -53,7 +53,7 @@
                 <TextBlock Margin="5">This is tab 5 content</TextBlock>
             </TabItem>
         </TabControl>
-        <ContentControl><view:TerrainViewWindow /></ContentControl>
+        <ContentControl Content = "{Binding CurrentWindow}"/>
     </StackPanel>
 
 </Window>

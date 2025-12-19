@@ -3,7 +3,7 @@ using CommunityToolkit.Mvvm.Input;
 
 namespace TecstileEditor.ViewModels;
 
-public partial class TerrainWindowViewModel : ViewModelBase
+public partial class UnitsWindowViewModel : ViewModelBase
 {
-    public string Test {get;set;} = "Terrain";
+    public string Test {get;set;} = "Units";
 }
