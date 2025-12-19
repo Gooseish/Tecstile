@@ -35,31 +35,23 @@
                 </MenuItem>
             </Menu>
         </DockPanel>
-        <TabStrip Margin="5">
-            <TabStripItem>Tab 1</TabStripItem>
-            <TabStripItem>Tab 2</TabStripItem>
-            <TabStripItem>Tab 3</TabStripItem>
-        </TabStrip>
-        <Border Margin="5" CornerRadius="10" Background="LightBlue">
-            <TextBlock Margin="5"
-                    FontSize="24" 
-                    HorizontalAlignment="Center"
-                    Text="Temperature Converter">
-            </TextBlock>
-        </Border>
-        <Grid ShowGridLines="True" Margin="5" 
-            ColumnDefinitions="120, 100"
-            RowDefinitions="Auto, Auto">
-            <TextBlock Grid.Row="0" Grid.Column="0" Margin="10">Celsius</TextBlock>
-            <TextBox Grid.Row="0" Grid.Column="1" Margin="0 5" Text="0"/>
-            <TextBlock Grid.Row="1" Grid.Column="0" Margin="10">Fahrenheit</TextBlock>
-            <TextBox Grid.Row="1" Grid.Column="1" Margin="0 5" Text="0"/>
-        </Grid>
-
-        <Button 
-            HorizontalAlignment="Center" >
-            Calculate
-        </Button>
+        <TabControl Margin="5">
+            <TabItem Header="Units">
+                <TextBlock Margin="5">This is tab 1 content</TextBlock>
+            </TabItem>
+            <TabItem Header="Classes">
+                <TextBlock Margin="5">This is tab 2 content</TextBlock>
+            </TabItem>
+            <TabItem Header="Skills">
+                <TextBlock Margin="5">This is tab 3 content</TextBlock>
+            </TabItem>
+            <TabItem Header="Items">
+                <TextBlock Margin="5">This is tab 4 content</TextBlock>
+            </TabItem>
+            <TabItem Header="Terrain">
+                <TextBlock Margin="5">This is tab 5 content</TextBlock>
+            </TabItem>
+        </TabControl>
     </StackPanel>
 
 </Window>
