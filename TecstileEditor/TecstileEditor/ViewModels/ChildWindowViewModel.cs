@@ -10,7 +10,7 @@ public partial class ChildWindowViewModel: ViewModelBase
 {
     [ObservableProperty]
     private EditorViewModel? _currentEditor;
-    public string CurrentEditorName{get{return "CurrentEditor.EditorName.ToString()";}}
+    public string CurrentEditorName{get{return CurrentEditor.EditorName.ToString();}}
     private EditorFactory _editorFactory;
 
     public ChildWindowViewModel(EditorFactory editorFactory)
