@@ -4,9 +4,9 @@ using Avalonia.Markup.Xaml;
 
 namespace TecstileEditor.Views;
 
-public partial class ChildWindow : Window
+public partial class ChildWindowView : Window
 {
-    public ChildWindow()
+    public ChildWindowView()
     {
         InitializeComponent();
     }

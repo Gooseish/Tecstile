@@ -6,9 +6,9 @@ namespace TecstileEditor.Factories;
 
 public class WindowFactory
 {
-    private readonly Func<EditorName, ChildWindow> windowFactory;
+    private readonly Func<EditorName, ChildWindowView> windowFactory;
 
-    public WindowFactory(Func<EditorName, ChildWindow> factory)
+    public WindowFactory(Func<EditorName, ChildWindowView> factory)
     {
         windowFactory = factory;
     }

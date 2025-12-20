@@ -5,12 +5,12 @@
         xmlns:vm="using:TecstileEditor.ViewModels"
         xmlns:view="using:TecstileEditor.Views"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        x:Class="TecstileEditor.Views.ChildWindow"
+        x:Class="TecstileEditor.Views.ChildWindowView"
         x:DataType="vm:ChildWindowViewModel"
         Title="ChildWindow">
   <StackPanel>
     <Button Content="Welcome"></Button>
     <Button>to</Button>
-    <Button Content="{Binding }"></Button>
+    <Button Content="{Binding CurrentEditorName}"></Button>
   </StackPanel>
 </Window>
