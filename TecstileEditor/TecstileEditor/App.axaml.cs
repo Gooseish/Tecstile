@@ -32,6 +32,7 @@ public partial class App : Application
             collection.AddSingleton<MainWindowViewModel>();
             collection.AddTransient<TerrainEditorViewModel>();
             collection.AddTransient<UnitsEditorViewModel>();
+            collection.AddTransient<ChildWindow>();
 
             collection.AddSingleton<Func<EditorName, EditorViewModel>>(x => name => name switch
             {
@@ -41,6 +42,10 @@ public partial class App : Application
             });
             collection.AddSingleton<EditorFactory>();
 
+            collection.AddSingleton<Func<EditorName, ChildWindow>>(x => name => name switch
+            {
+                _ => x.GetRequiredService<ChildWindow>()
+            });
             collection.AddSingleton<WindowFactory>();
 
             var services = collection.BuildServiceProvider();
