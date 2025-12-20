@@ -33,6 +33,7 @@ public partial class App : Application
             collection.AddTransient<TerrainEditorViewModel>();
             collection.AddTransient<UnitsEditorViewModel>();
             collection.AddTransient<ChildWindow>();
+            collection.AddTransient<ChildWindowViewModel>();
 
             collection.AddSingleton<Func<EditorName, EditorViewModel>>(x => name => name switch
             {
@@ -42,9 +43,13 @@ public partial class App : Application
             });
             collection.AddSingleton<EditorFactory>();
 
-            collection.AddSingleton<Func<EditorName, ChildWindow>>(x => name => name switch
+            collection.AddSingleton<Func<EditorName, ChildWindow>>(x => name =>
             {
-                _ => x.GetRequiredService<ChildWindow>()
+                ChildWindow resultView = x.GetRequiredService<ChildWindow>();
+                ChildWindowViewModel resultModel = x.GetRequiredService<ChildWindowViewModel>();
+                resultModel.GoToEditor(name);
+                resultView.DataContext = resultModel;
+                return resultView;
             });
             collection.AddSingleton<WindowFactory>();
 
