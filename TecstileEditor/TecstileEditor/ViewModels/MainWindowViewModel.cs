@@ -19,6 +19,11 @@ public partial class MainWindowViewModel : ViewModelBase
         GoToUnits();
     }
     [RelayCommand]
+    private void EjectEditor()
+    {
+        _windowFactory.LaunchNewChildWindow(_currentEditor.EditorName);
+    }
+    [RelayCommand]
     private void GoToUnits()
     {
         CurrentEditor = _editorFactory.GetEditorViewModel(Data.EditorName.Units);
