@@ -8,5 +8,9 @@
         x:Class="TecstileEditor.Views.ChildWindow"
         x:DataType="vm:ChildWindowViewModel"
         Title="ChildWindow">
-  Welcome to Avalonia!
+  <StackPanel>
+    <Button Content="Welcome"></Button>
+    <Button>to</Button>
+    <Button Content="{Binding }"></Button>
+  </StackPanel>
 </Window>
