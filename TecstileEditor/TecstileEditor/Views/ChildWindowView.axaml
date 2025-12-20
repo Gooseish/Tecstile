@@ -12,5 +12,6 @@
     <Button Content="Welcome"></Button>
     <Button>to</Button>
     <Button Content="{Binding CurrentEditorName}"></Button>
+    <ContentControl Content = "{Binding CurrentEditor}"/>
   </StackPanel>
 </Window>
