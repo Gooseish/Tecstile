@@ -6,6 +6,7 @@ using System.Linq;
 using Avalonia.Markup.Xaml;
 using TecstileEditor.ViewModels;
 using TecstileEditor.Views;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace TecstileEditor;
 
@@ -23,9 +24,15 @@ public partial class App : Application
             // Avoid duplicate validations from both Avalonia and the CommunityToolkit. 
             // More info: https://docs.avaloniaui.net/docs/guides/development-guides/data-validation#manage-validationplugins
             DisableAvaloniaDataAnnotationValidation();
+            
+            var collection = new ServiceCollection();
+            collection.AddSingleton<MainWindowViewModel>();
+
+            var services = collection.BuildServiceProvider();
+
             desktop.MainWindow = new MainWindow
             {
-                DataContext = new MainWindowViewModel(),
+                DataContext = services.GetRequiredService<MainWindowViewModel>()
             };
         }
 
