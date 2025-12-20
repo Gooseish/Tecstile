@@ -41,6 +41,8 @@ public partial class App : Application
             });
             collection.AddSingleton<EditorFactory>();
 
+            collection.AddSingleton<WindowFactory>();
+
             var services = collection.BuildServiceProvider();
 
             desktop.MainWindow = new MainWindow

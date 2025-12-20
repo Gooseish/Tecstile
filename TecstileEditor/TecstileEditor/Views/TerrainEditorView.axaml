@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              xmlns:vm="clr-namespace:TecstileEditor.ViewModels"
-             x:DataType="vm:TerrainWindowViewModel"
-             x:Class="TecstileEditor.Views.TerrainWindowView">
+             x:DataType="vm:TerrainEditorViewModel"
+             x:Class="TecstileEditor.Views.TerrainEditorView">
   Welcome to Terrain!
 </UserControl>

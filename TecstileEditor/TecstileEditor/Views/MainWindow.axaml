@@ -40,7 +40,7 @@
             <Button Command="{Binding GoToUnitsCommand}">Units</Button>
             <Button Command="{Binding GoToTerrainCommand}">Terrain</Button>
         </StackPanel>
-        <ContentControl Content = "{Binding CurrentWindow}"/>
+        <ContentControl Content = "{Binding CurrentEditor}"/>
     </StackPanel>
 
 </Window>

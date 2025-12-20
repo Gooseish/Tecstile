@@ -4,9 +4,9 @@ using Avalonia.Markup.Xaml;
 
 namespace TecstileEditor.Views;
 
-public partial class SkillsWindowView : UserControl
+public partial class TerrainEditorView : UserControl
 {
-    public SkillsWindowView()
+    public TerrainEditorView()
     {
         InitializeComponent();
     }

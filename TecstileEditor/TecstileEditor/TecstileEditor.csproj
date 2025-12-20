@@ -14,6 +14,7 @@
     <Folder Include="Factories\" />
     <Folder Include="Models\" />
     <AvaloniaResource Include="Assets\**" />
+    <Folder Include="Services\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,20 +36,20 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\ClassesWindowView.axaml.cs">
-      <DependentUpon>ClassesWindowView.axaml</DependentUpon>
+    <Compile Update="Views\ClassesEditorView.axaml.cs">
+      <DependentUpon>ClassesEditorView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\ItemsWindowView.axaml.cs">
-      <DependentUpon>ItemsWindowView.axaml</DependentUpon>
+    <Compile Update="Views\ItemsEditorView.axaml.cs">
+      <DependentUpon>ItemsEditorView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\SkillsWindowView.axaml.cs">
-      <DependentUpon>SkillsWindowView.axaml</DependentUpon>
+    <Compile Update="Views\SkillsEditorView.axaml.cs">
+      <DependentUpon>SkillsEditorView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\TerrainWindowView.axaml.cs">
-      <DependentUpon>TerrainWindowView.axaml</DependentUpon>
+    <Compile Update="Views\TerrainEditorView.axaml.cs">
+      <DependentUpon>TerrainEditorView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\UnitsWindowView.axaml.cs">
-      <DependentUpon>UnitsWindowView.axaml</DependentUpon>
+    <Compile Update="Views\UnitsEditorView.axaml.cs">
+      <DependentUpon>UnitsEditorView.axaml</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>

@@ -3,8 +3,6 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             xmlns:vm="clr-namespace:TecstileEditor.ViewModels"
-             x:DataType="vm:UnitsWindowViewModel"
-             x:Class="TecstileEditor.Views.UnitsWindowView">
-  <Label Content="{Binding Test}"></Label>
+             x:Class="TecstileEditor.Views.ClassesEditorView">
+  Welcome to Classes!
 </UserControl>
