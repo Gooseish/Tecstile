@@ -7,6 +7,9 @@ using Avalonia.Markup.Xaml;
 using TecstileEditor.ViewModels;
 using TecstileEditor.Views;
 using Microsoft.Extensions.DependencyInjection;
+using TecstileEditor.Factories;
+using System;
+using TecstileEditor.Data;
 
 namespace TecstileEditor;
 
@@ -27,6 +30,16 @@ public partial class App : Application
             
             var collection = new ServiceCollection();
             collection.AddSingleton<MainWindowViewModel>();
+            collection.AddTransient<TerrainWindowViewModel>();
+            collection.AddTransient<UnitsWindowViewModel>();
+
+            collection.AddSingleton<Func<EditorName, EditorViewModel>>(x => name => name switch
+            {
+                EditorName.Terrain => x.GetRequiredService<TerrainWindowViewModel>(),
+                EditorName.Units => x.GetRequiredService<UnitsWindowViewModel>(),
+                _ => throw new InvalidOperationException("Editor type not recognized by editor factory.")
+            });
+            collection.AddSingleton<EditorFactory>();
 
             var services = collection.BuildServiceProvider();
 

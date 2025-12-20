@@ -1,28 +1,29 @@
 ﻿using System.Security;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using TecstileEditor.Factories;
 
 namespace TecstileEditor.ViewModels;
 
 public partial class MainWindowViewModel : ViewModelBase
 {
     [ObservableProperty]
-    private ViewModelBase _currentWindow;
+    private EditorViewModel _currentWindow;
+    private EditorFactory _editorFactory;
     
-    public MainWindowViewModel()
+    public MainWindowViewModel(EditorFactory editorFactory, TerrainWindowViewModel terrainWindow)
     {
-        _currentWindow = _unitsWindow;
+        _editorFactory = editorFactory;
+        GoToUnits();
     }
-    private readonly TerrainWindowViewModel _terrainWindow = new();
-    private readonly UnitsWindowViewModel _unitsWindow = new();
     [RelayCommand]
     private void GoToUnits()
     {
-        CurrentWindow = _unitsWindow;
+        CurrentWindow = _editorFactory.GetEditorViewModel(Data.EditorName.Units);
     }
     [RelayCommand]
     private void GoToTerrain()
     {
-        CurrentWindow = _terrainWindow;
+        CurrentWindow = _editorFactory.GetEditorViewModel(Data.EditorName.Terrain);
     }
 }
