@@ -3,10 +3,10 @@ using CommunityToolkit.Mvvm.Input;
 
 namespace TecstileEditor.ViewModels;
 
-public partial class TerrainWindowViewModel : EditorViewModel
+public partial class TerrainEditorViewModel : EditorViewModel
 {
     public string Test {get;set;} = "Terrain";
-    public TerrainWindowViewModel()
+    public TerrainEditorViewModel()
     {
         EditorName = Data.EditorName.Terrain;
     }

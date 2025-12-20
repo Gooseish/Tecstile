@@ -30,13 +30,13 @@ public partial class App : Application
             
             var collection = new ServiceCollection();
             collection.AddSingleton<MainWindowViewModel>();
-            collection.AddTransient<TerrainWindowViewModel>();
-            collection.AddTransient<UnitsWindowViewModel>();
+            collection.AddTransient<TerrainEditorViewModel>();
+            collection.AddTransient<UnitsEditorViewModel>();
 
             collection.AddSingleton<Func<EditorName, EditorViewModel>>(x => name => name switch
             {
-                EditorName.Terrain => x.GetRequiredService<TerrainWindowViewModel>(),
-                EditorName.Units => x.GetRequiredService<UnitsWindowViewModel>(),
+                EditorName.Terrain => x.GetRequiredService<TerrainEditorViewModel>(),
+                EditorName.Units => x.GetRequiredService<UnitsEditorViewModel>(),
                 _ => throw new InvalidOperationException("Editor type not recognized by editor factory.")
             });
             collection.AddSingleton<EditorFactory>();

@@ -8,10 +8,10 @@ namespace TecstileEditor.ViewModels;
 public partial class MainWindowViewModel : ViewModelBase
 {
     [ObservableProperty]
-    private EditorViewModel _currentWindow;
+    private EditorViewModel _currentEditor;
     private EditorFactory _editorFactory;
     
-    public MainWindowViewModel(EditorFactory editorFactory, TerrainWindowViewModel terrainWindow)
+    public MainWindowViewModel(EditorFactory editorFactory)
     {
         _editorFactory = editorFactory;
         GoToUnits();
@@ -19,11 +19,11 @@ public partial class MainWindowViewModel : ViewModelBase
     [RelayCommand]
     private void GoToUnits()
     {
-        CurrentWindow = _editorFactory.GetEditorViewModel(Data.EditorName.Units);
+        CurrentEditor = _editorFactory.GetEditorViewModel(Data.EditorName.Units);
     }
     [RelayCommand]
     private void GoToTerrain()
     {
-        CurrentWindow = _editorFactory.GetEditorViewModel(Data.EditorName.Terrain);
+        CurrentEditor = _editorFactory.GetEditorViewModel(Data.EditorName.Terrain);
     }
 }

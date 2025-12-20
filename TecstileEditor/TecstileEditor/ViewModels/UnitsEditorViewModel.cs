@@ -3,10 +3,10 @@ using CommunityToolkit.Mvvm.Input;
 
 namespace TecstileEditor.ViewModels;
 
-public partial class UnitsWindowViewModel : EditorViewModel
+public partial class UnitsEditorViewModel : EditorViewModel
 {
     public string Test {get;set;} = "Units";
-    public UnitsWindowViewModel()
+    public UnitsEditorViewModel()
     {
         EditorName = Data.EditorName.Units;
     }
