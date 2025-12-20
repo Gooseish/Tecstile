@@ -35,6 +35,7 @@ public partial class App : Application
             collection.AddTransient<ChildWindowView>();
             collection.AddTransient<ChildWindowViewModel>();
 
+            // Editor Factory
             collection.AddSingleton<Func<EditorName, EditorViewModel>>(x => name => name switch
             {
                 EditorName.Terrain => x.GetRequiredService<TerrainEditorViewModel>(),
@@ -43,11 +44,12 @@ public partial class App : Application
             });
             collection.AddSingleton<EditorFactory>();
 
+            // Window Factory
             collection.AddSingleton<Func<EditorName, ChildWindowView>>(x => name =>
             {
                 ChildWindowView resultView = x.GetRequiredService<ChildWindowView>();
                 ChildWindowViewModel resultViewModel = x.GetRequiredService<ChildWindowViewModel>();
-                resultViewModel.GoToEditor(name);
+                resultViewModel.GoToEditor(name); // Is there a way to handle this in the constructor?
                 resultView.DataContext = resultViewModel;
                 return resultView;
             });
