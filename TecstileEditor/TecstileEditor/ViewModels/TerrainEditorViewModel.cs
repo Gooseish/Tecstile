@@ -1,3 +1,4 @@
+using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Tecstile.Game_Board;
@@ -9,9 +10,17 @@ public partial class TerrainEditorViewModel : EditorViewModel
 {
     [ObservableProperty]
     private int _selectedTerrain;
-    private Terrain _selectedTerrainData{get {return DataContentManager.GetTerrain(_selectedTerrain);}}
+    
+    public ObservableCollection<TerrainDataViewModel> TerrainData {get;} = new();
+
     public TerrainEditorViewModel()
     {
         EditorName = Data.EditorName.Terrain;
+    }
+
+    [RelayCommand]
+    private void AddTerrainData()
+    {
+        TerrainData.Add(new TerrainDataViewModel());
     }
 }
