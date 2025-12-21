@@ -9,10 +9,6 @@ namespace TecstileEditor.Models;
 
 public static class TerrainDataModel
 {
-    public static void Save()
-    {
-        System.Console.WriteLine("Ding!");
-    }
     public static Dictionary<int, Terrain> terrainData = new();
     public static Terrain newTerrain()
     {

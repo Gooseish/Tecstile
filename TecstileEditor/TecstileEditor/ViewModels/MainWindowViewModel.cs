@@ -2,6 +2,7 @@
 using CommunityToolkit.Mvvm.Input;
 using TecstileEditor.Factories;
 using TecstileEditor.Models;
+using TecstileEditor.Services;
 
 namespace TecstileEditor.ViewModels;
 
@@ -21,7 +22,7 @@ public partial class MainWindowViewModel : ViewModelBase
     [RelayCommand]
     private void SaveProject()
     {
-        TerrainDataModel.Save();
+        SaveLoadService.Save();
     }
     /// <summary>
     /// Pops out the current editor as a new window
