@@ -8,6 +8,11 @@ namespace TecstileEditor.ViewModels;
 
 public partial class TerrainDataViewModel : ViewModelBase
 {
+    /// <summary>
+    /// Create a new TerrainDataViewModel by creating a new
+    /// terrain instance and registering it in the dictionary
+    /// of all terrain data.
+    /// </summary>
     public TerrainDataViewModel()
     {
         Terrain terrain = TerrainDataModel.newTerrain();

@@ -6,5 +6,13 @@
              xmlns:vm="clr-namespace:TecstileEditor.ViewModels"
              x:DataType="vm:TerrainEditorViewModel"
              x:Class="TecstileEditor.Views.TerrainEditorView">
-  Welcome to Terrain!
+  <StackPanel Orientation="Horizontal">
+    <!-- Select terrain from dictionary -->
+      <StackPanel>
+        <TextBlock Text="All Terrain"/>
+        <ScrollViewer>
+        </ScrollViewer>
+        <Button Command="{Binding AddTerrainDataCommand}">New Terrain</Button>
+      </StackPanel>
+  </StackPanel>
 </UserControl>

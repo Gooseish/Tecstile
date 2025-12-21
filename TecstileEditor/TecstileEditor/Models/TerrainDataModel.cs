@@ -9,8 +9,7 @@ namespace TecstileEditor.Models;
 
 public static class TerrainDataModel
 {
-    public static Dictionary<int, Terrain> terrainData;
-
+    public static Dictionary<int, Terrain> terrainData = new();
     public static Terrain newTerrain()
     {
         Terrain result = new Terrain()
