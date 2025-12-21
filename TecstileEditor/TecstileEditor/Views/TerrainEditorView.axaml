@@ -12,7 +12,11 @@
         <TextBlock Text="All Terrain"/>
         <ScrollViewer>
           <ItemsControl ItemsSource="{Binding TerrainData}">
-            
+            <ItemsControl.ItemTemplate>
+              <DataTemplate DataType="vm:TerrainDataViewModel">
+                  <TextBlock Text="{Binding Name}"/>
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
           </ItemsControl>
         </ScrollViewer>
         <Button Command="{Binding AddTerrainDataCommand}">New Terrain</Button>
