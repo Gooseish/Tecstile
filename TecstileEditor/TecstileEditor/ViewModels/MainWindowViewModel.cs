@@ -17,6 +17,9 @@ public partial class MainWindowViewModel : ViewModelBase
         _windowFactory = windowFactory;
         GoToUnits();
     }
+    /// <summary>
+    /// Pops out the current editor as a new window
+    /// </summary>
     [RelayCommand]
     private void EjectEditor()
     {

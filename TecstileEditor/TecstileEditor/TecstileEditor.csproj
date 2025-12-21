@@ -12,7 +12,6 @@
     <Folder Include="Content\Data\" />
     <Folder Include="Content\Data\TerrainData\" />
     <Folder Include="Factories\" />
-    <Folder Include="Models\" />
     <AvaloniaResource Include="Assets\**" />
     <Folder Include="Services\" />
   </ItemGroup>
