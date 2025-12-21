@@ -5,14 +5,14 @@ namespace Tecstile.Game_Board;
 
 public class Terrain
 {
-    public int id;
-    public string name;
-    public int avoid;
-    public int def;
-    public int res;
-    public bool heals;
-    public int healPercent;
-    public Dictionary<MovementType, int> movementCost;
+    public int id {get;set;}
+    public string name {get;set;}
+    public int avoid {get;set;}
+    public int def {get;set;}
+    public int res {get;set;}
+    public bool heals {get;set;}
+    public int healPercent {get;set;}
+    public Dictionary<MovementType, int> movementCost {get;set;}
 }
 
 public enum MovementType
