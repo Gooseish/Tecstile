@@ -10,11 +10,15 @@
     <!-- Select terrain from dictionary -->
       <StackPanel>
         <TextBlock Text="All Terrain"/>
-        <ScrollViewer>
+        <ScrollViewer Width="120" Height="300">
           <ItemsControl ItemsSource="{Binding TerrainData}">
             <ItemsControl.ItemTemplate>
               <DataTemplate DataType="vm:TerrainDataViewModel">
-                  <TextBlock Text="{Binding Name}"/>
+                <StackPanel Orientation="Horizontal">
+                  <TextBlock Text="{Binding Id}" />
+                  <TextBlock Text=": " />
+                  <TextBlock Text="{Binding Name}" />
+                </StackPanel>
               </DataTemplate>
             </ItemsControl.ItemTemplate>
           </ItemsControl>
