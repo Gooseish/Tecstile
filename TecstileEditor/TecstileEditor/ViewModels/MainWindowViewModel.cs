@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using TecstileEditor.Factories;
+using TecstileEditor.Models;
 
 namespace TecstileEditor.ViewModels;
 
@@ -16,6 +17,11 @@ public partial class MainWindowViewModel : ViewModelBase
         _editorFactory = editorFactory;
         _windowFactory = windowFactory;
         GoToUnits();
+    }
+    [RelayCommand]
+    private void SaveProject()
+    {
+        TerrainDataModel.Save();
     }
     /// <summary>
     /// Pops out the current editor as a new window

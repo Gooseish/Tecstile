@@ -23,4 +23,9 @@ public partial class TerrainEditorViewModel : EditorViewModel
     {
         TerrainData.Add(new TerrainDataViewModel());
     }
+    [RelayCommand]
+    private void SelectTerrain()
+    {
+        
+    }
 }
