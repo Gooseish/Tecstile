@@ -16,6 +16,13 @@ public partial class TerrainEditorViewModel : EditorViewModel
     public TerrainEditorViewModel()
     {
         EditorName = Data.EditorName.Terrain;
+
+        getTerrainData();
+        void getTerrainData()
+        {
+            foreach (Terrain terrain in TerrainDataModel.terrainData.Values)
+                TerrainData.Add(new TerrainDataViewModel(terrain));
+        }
     }
 
     [RelayCommand]
