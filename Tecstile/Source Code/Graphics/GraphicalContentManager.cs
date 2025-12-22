@@ -33,7 +33,7 @@ public class GraphicalContentManager
         loadFonts();
         void loadFonts()
         {
-            State.fonts["Arial"] = Core.Content.Load<SpriteFont>(@"Fonts/Arial");
+            State.fonts["Arial"] = Core.Content.Load<SpriteFont>(@"Assets/Fonts/Arial");
         }
     }
     public void initialize()
@@ -43,7 +43,7 @@ public class GraphicalContentManager
     public void loadTileset(string tilesetName)
     {
         State.tileset = new SpriteSheet(
-            Core.Content.Load<Texture2D>(@"Graphics/Tilesets/" + tilesetName), 
+            Core.Content.Load<Texture2D>(@"Assets/Graphics/Tilesets/" + tilesetName), 
             TecstileConfig.tileWidth, TecstileConfig.tileHeight);
     }
     #endregion
